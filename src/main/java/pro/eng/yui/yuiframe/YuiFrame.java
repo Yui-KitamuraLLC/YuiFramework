@@ -1,5 +1,12 @@
 package pro.eng.yui.yuiframe;
 
+import pro.eng.yui.yuiframe.utils.ICollectionUtil;
+import pro.eng.yui.yuiframe.utils.IObjectUtil;
+import pro.eng.yui.yuiframe.utils.IStringUtil;
+import pro.eng.yui.yuiframe.utils.impl.CollectionUtils;
+import pro.eng.yui.yuiframe.utils.impl.ObjectUtils;
+import pro.eng.yui.yuiframe.utils.impl.StringUtils;
+
 /**
  * フレームワークのメインクラス
  * @author yui-KITAMURA
@@ -8,5 +15,8 @@ package pro.eng.yui.yuiframe;
  */
 public final class YuiFrame {
 
+    public final static ICollectionUtil ListUtil = CollectionUtils.getInstance();
+    public final static IStringUtil StringUtil = StringUtils.getInstance();
+    public final static IObjectUtil ObjectUtil = ObjectUtils.getInstance();
 
 }

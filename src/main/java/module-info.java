@@ -5,5 +5,6 @@ module pro.eng.yui.YuiFramework {
 
     // exports
     exports pro.eng.yui.yuiframe;
+    exports pro.eng.yui.yuiframe.utils;
 
 }
