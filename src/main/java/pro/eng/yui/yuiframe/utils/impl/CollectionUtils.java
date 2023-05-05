@@ -2,6 +2,9 @@ package pro.eng.yui.yuiframe.utils.impl;
 
 import pro.eng.yui.yuiframe.utils.ICollectionUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 汎用的なCollectionに対する操作の実装
  * @since 1.0.0
@@ -25,5 +28,8 @@ public class CollectionUtils implements ICollectionUtil {
     // fields
 
     // methods
-
+    @Override
+    public <T> List<T> toList(T... aryObj) {
+        return List.of(aryObj);
+    }
 }
