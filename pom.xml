@@ -6,7 +6,7 @@
 
     <groupId>pro.eng.yui</groupId>
     <artifactId>YuiFramework</artifactId>
-    <version>1.0.0-Snap001</version>
+    <version>1.0.0-SNAPSHOT-001</version>
     <name>Yui-Framework</name>
 
     <properties>
