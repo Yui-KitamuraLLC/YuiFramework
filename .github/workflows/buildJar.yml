@@ -1,0 +1,16 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  call-workflow-passing-data:
+    uses: Yui-KitamuraLLC/workflows/.github/workflows/mavenBuildCommit.yml@main
+    with:
+      jdk: "17"
+    secrets:
+      app_id: ${{secrets.APP_ID}}
+      secret: ${{secrets.SECRET}}
