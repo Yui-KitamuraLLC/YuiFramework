@@ -7,4 +7,11 @@ package pro.eng.yui.yuiframe.utils;
  * @version 1.0.0
  */
 public interface IStringUtil {
+
+    /** Empty string <code>""</code> */
+    String EMPTY = "";
+    /** one Space string <code>" "</code> */
+    String SPACE = " ";
+
+
 }
