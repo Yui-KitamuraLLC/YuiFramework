@@ -9,11 +9,11 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-target/
+target/*
 
 # Package Files #
 *.jar
-!/target/*.jar
+!target/*.jar
 *.war
 *.nar
 *.ear
