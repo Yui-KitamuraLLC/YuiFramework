@@ -1,4 +1,4 @@
 /**
- * 汎用処理の提供
+ * Provide common operations
  */
 package pro.eng.yui.yuiframe.utils;

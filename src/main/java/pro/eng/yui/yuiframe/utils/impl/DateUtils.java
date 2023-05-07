@@ -3,7 +3,7 @@ package pro.eng.yui.yuiframe.utils.impl;
 import pro.eng.yui.yuiframe.utils.IDateUtil;
 
 /**
- * 汎用的な日付に対する操作の実装
+ * Implement of common operation for Dates/Calendar
  * @since 1.0.0
  * @author yui-KITAMURA
  * @version 1.0.0

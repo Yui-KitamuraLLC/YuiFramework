@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 汎用的な文字列操作の実装
+ * Implement of common operation for Strings
  * @since 1.0.0
  * @author yui-KITAMURA
  * @version 1.0.0
