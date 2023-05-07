@@ -88,8 +88,7 @@ public class StringUtils implements IStringUtil {
     private String join(final CharSequence delimiter, final Iterable<? extends CharSequence> arg){
         String delimitStr = (delimiter == null) ? SPACE : delimiter.toString();
         StringBuilder sb = new StringBuilder();
-        for(int idx = 0; arg.iterator().hasNext(); idx++){
-            CharSequence cs = arg.iterator().next();
+        for(CharSequence cs : arg){
             if(cs == null){
                 sb.append(SPACE);
             }else{
