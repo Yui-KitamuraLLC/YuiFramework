@@ -64,5 +64,72 @@ class StringUtilsTest {
         assertFalse(YuiFrame.StringUtil.eq(first, second));
     }
 
+    /* ** concat ** */
+    @Test
+    public void testStrConcat1(){
+        List<String> data = new ArrayList<>();
+        data.add("abc");
+        data.add("def");
+        data.add("uvw");
+        data.add("xyz");
+        assertEquals("abcdefuvwxyz", YuiFrame.StringUtil.concat(data));
+    }
+    @Test
+    public void testStrConcat2(){
+        assertEquals("abcdefuvwxyz", YuiFrame.StringUtil.concat("abc","def","uvw","xyz"));
+    }
+    @Test
+    public void testStrConcat3(){
+        // null replaced to space
+        List<String> data = new ArrayList<>();
+        data.add(null);
+        data.add(null);
+        data.add(null);
+        data.add(null);
+        assertEquals("    ", YuiFrame.StringUtil.concat(data));
+    }
+    @Test
+    public void testStrConcat4(){
+        assertEquals("    ", YuiFrame.StringUtil.concat(null,null,null,null));
+    }
+    @Test
+    public void testStrConcatDelimit1(){
+        List<String> data = new ArrayList<>();
+        data.add("abc");
+        data.add("def");
+        data.add("uvw");
+        data.add("xyz");
+        assertEquals("abc,def,uvw,xyz", YuiFrame.StringUtil.concatWithDelimiter(",", data));
+    }
+    @Test
+    public void testStrConcatDelimit2(){
+        assertEquals("abc,def,uvw,xyz", YuiFrame.StringUtil.concatWithDelimiter(",","abc","def","uvw","xyz"));
+    }
+    @Test
+    public void testStrConcatDelimit3(){
+        List<String> data = new ArrayList<>();
+        data.add(null);
+        data.add(null);
+        data.add(null);
+        data.add(null);
+        assertEquals(" , , , ", YuiFrame.StringUtil.concatWithDelimiter(",", data));
+    }
+    @Test
+    public void testStrConcatDelimit4(){
+        assertEquals(" , , , ", YuiFrame.StringUtil.concatWithDelimiter(",",null,null,null,null));
+    }
+    @Test
+    public void testStrConcatDelimit5(){
+        List<String> data = new ArrayList<>();
+        data.add(null);
+        data.add(null);
+        data.add(null);
+        data.add(null);
+        assertEquals("       ", YuiFrame.StringUtil.concatWithDelimiter(null, data));
+    }
+    @Test
+    public void testStrConcatDelimit6(){
+        assertEquals("       ", YuiFrame.StringUtil.concatWithDelimiter(null,null,null,null,null));
+    }
 
 }
