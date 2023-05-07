@@ -7,6 +7,7 @@ module pro.eng.yui.YuiFramework {
 
     //requires
     requires java.base;
+    requires java.sql;
 
     // exports
     exports pro.eng.yui.yuiframe;
