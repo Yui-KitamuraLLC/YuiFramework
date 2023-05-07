@@ -132,4 +132,56 @@ class StringUtilsTest {
         assertEquals("       ", YuiFrame.StringUtil.concatWithDelimiter(null,null,null,null,null));
     }
 
+    /* ** isEmpty ** */
+    @Test
+    public void testStrIsEmpty1(){
+        assertTrue(YuiFrame.StringUtil.isEmpty(null));
+    }
+    @Test
+    public void testStrIsEmpty2(){
+        assertTrue(YuiFrame.StringUtil.isEmpty(IStringUtil.EMPTY));
+    }
+    @Test
+    public void testStrIsEmpty3(){
+        assertFalse(YuiFrame.StringUtil.isEmpty(IStringUtil.SPACE));
+    }
+    @Test
+    public void testStrIsEmpty4(){
+        assertFalse(YuiFrame.StringUtil.isEmpty("  "));
+    }
+    /* ** isEmpty#object ** */
+    static class EmptyObj{
+        @Override
+        public String toString() {
+            return IStringUtil.EMPTY;
+        }
+    }
+    @Test
+    public void testStrIsEmptyObj1(){
+        assertTrue(YuiFrame.StringUtil.isEmpty((Object)null));
+    }
+    @Test
+    public void testStrIsEmptyObj2(){
+        assertTrue(YuiFrame.StringUtil.isEmpty(new EmptyObj()));
+    }
+    @Test
+    public void testStrIsEmptyObj3(){
+        assertFalse(YuiFrame.StringUtil.isEmpty(new Object()));
+    }
+    @Test
+    public void testStrIsEmptyObj4(){
+        assertTrue(YuiFrame.StringUtil.isEmpty(new StringBuffer()));
+    }
+    @Test
+    public void testStrIsEmptyObj5(){
+        StringBuffer sb = new StringBuffer();
+        sb.append(new EmptyObj());
+        assertTrue(YuiFrame.StringUtil.isEmpty(sb));
+    }
+    @Test
+    public void testStrIsEmptyObj6(){
+        StringBuffer sb = new StringBuffer(IStringUtil.SPACE);
+        assertFalse(YuiFrame.StringUtil.isEmpty(sb));
+    }
+
 }
