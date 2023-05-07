@@ -38,6 +38,7 @@ class StringUtilsTest {
         // this case returns TRUE
         assertTrue(YuiFrame.StringUtil.eq("ABC", "abc"));
     }
+    @SuppressWarnings("StringOperationCanBeSimplified")
     @Test
     public void testStrEqIgCase2(){
         String first = new String("aBc");
