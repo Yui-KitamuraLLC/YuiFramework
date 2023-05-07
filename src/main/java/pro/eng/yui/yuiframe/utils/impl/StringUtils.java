@@ -41,7 +41,7 @@ public class StringUtils implements IStringUtil {
         return first.equalsIgnoreCase(second);
     }
 
-
+    @SuppressWarnings("UnusedAssignment")
     @Override
     public String concat(Iterable<? extends CharSequence> arg){
         for(CharSequence cs : arg){
@@ -61,6 +61,7 @@ public class StringUtils implements IStringUtil {
         return join(EMPTY, arg);
     }
 
+    @SuppressWarnings("UnusedAssignment")
     @Override
     public String concatWithDelimiter(CharSequence delimiter, Iterable<? extends CharSequence> arg){
         for(CharSequence cs : arg){
