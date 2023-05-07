@@ -3,6 +3,7 @@ package pro.eng.yui.yuiframe.utils.impl;
 import pro.eng.yui.yuiframe.YuiFrame;
 import pro.eng.yui.yuiframe.utils.IStringUtil;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -88,13 +89,16 @@ public class StringUtils implements IStringUtil {
     private String join(final CharSequence delimiter, final Iterable<? extends CharSequence> arg){
         String delimitStr = (delimiter == null) ? SPACE : delimiter.toString();
         StringBuilder sb = new StringBuilder();
-        for(CharSequence cs : arg){
+
+        Iterator<? extends CharSequence> itr = arg.iterator();
+        while(itr.hasNext()){
+            CharSequence cs = itr.next();
             if(cs == null){
                 sb.append(SPACE);
             }else{
                 sb.append(cs);
             }
-            if(arg.iterator().hasNext()){
+            if(itr.hasNext()){
                 sb.append(delimitStr);
             }
         }
