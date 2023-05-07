@@ -1,3 +1,8 @@
+/**
+ * module info of <q>YuiFramework</q>
+ * @author yui-KITAMURA
+ * @since 1.0.0
+ */
 module pro.eng.yui.YuiFramework {
 
     //requires
