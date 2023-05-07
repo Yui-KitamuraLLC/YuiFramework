@@ -5,7 +5,7 @@ import pro.eng.yui.yuiframe.utils.ICollectionUtil;
 import java.util.List;
 
 /**
- * 汎用的なCollectionに対する操作の実装
+ * Implement of common operation for Collections
  * @since 1.0.0
  * @author yui-KITAMURA
  * @version 1.0.0

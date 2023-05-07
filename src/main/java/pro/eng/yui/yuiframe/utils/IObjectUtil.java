@@ -1,7 +1,7 @@
 package pro.eng.yui.yuiframe.utils;
 
 /**
- * 汎用的なObjectに対する操作を定義する
+ * Define common Object operations
  * @since 1.0.0
  * @author yui-KITAMURA
  * @version 1.0.0

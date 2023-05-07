@@ -3,7 +3,7 @@ package pro.eng.yui.yuiframe.utils;
 import pro.eng.yui.yuiframe.utils.impl.StringUtils;
 
 /**
- * 汎用的な文字列操作を定義する
+ * Define common String operations
  * @since 1.0.0
  * @author yui-KITAMURA
  * @version 1.0.0
