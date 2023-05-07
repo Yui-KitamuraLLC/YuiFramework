@@ -22,4 +22,8 @@ public final class YuiFrame {
     public final static IObjectUtil ObjectUtil = ObjectUtils.getInstance();
     public final static IDateUtil DateUtil = DateUtils.getInstance();
 
+    private YuiFrame(){
+        // do not create instance
+    }
+
 }
