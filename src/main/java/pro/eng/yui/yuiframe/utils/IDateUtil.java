@@ -33,7 +33,7 @@ public interface IDateUtil {
         /** <code>HHmmss</code> style format */
         HHMMSS(new SimpleDateFormat("HHmmss")),
         /** <code>HH:mm:ss.SSS</code> style format */
-        HHMMSS_sss(new SimpleDateFormat("HH:mm:ss.SSS"));
+        HHMMSS_cr_sss(new SimpleDateFormat("HH:mm:ss.SSS"));
 
         private final SimpleDateFormat value;
         Formats(SimpleDateFormat format){
