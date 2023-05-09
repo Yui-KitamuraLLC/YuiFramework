@@ -1,5 +1,6 @@
 package pro.eng.yui.yuiframe.utils.impl;
 
+import pro.eng.yui.yuiframe.YuiFrame;
 import pro.eng.yui.yuiframe.utils.IDateUtil;
 
 import java.sql.Timestamp;
@@ -37,11 +38,17 @@ public class DateUtils implements IDateUtil {
 
     @Override
     public Date toDate(Calendar calendar){
+        if(YuiFrame.ObjectUtil.isNull(calendar)){
+            return null;
+        }
         return calendar.getTime();
     }
 
     @Override
     public Calendar toCal(Date date){
+        if(YuiFrame.ObjectUtil.isNull(date)){
+            return null;
+        }
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return calendar;

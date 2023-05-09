@@ -54,6 +54,7 @@ public interface IDateUtil {
 
     /**
      * Convert {@link java.util.Calendar} to {@link java.util.Date}
+     * <code>null</code>-safe
      * @param calendar original instance of Calendar
      * @return the Date instance that has same timestamp with parameter
      */
@@ -61,6 +62,7 @@ public interface IDateUtil {
 
     /**
      * Convert {@link java.util.Date} to {@link java.util.Calendar}
+     * <code>null</code>-safe
      * @param date original instance of Date
      * @return the Calendar instance that has same timestamp with parameter
      */
