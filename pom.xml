@@ -8,25 +8,35 @@
     <artifactId>YuiFramework</artifactId>
     <version>1.0.0-SNAPSHOT-003</version>
     <name>Yui-Framework</name>
-
-    <properties>
-        <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <description>Java Utilities Package</description>
+    <url>https://github.com/Yui-KitamuraLLC/YuiFramework</url>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <comments>Copyright 2023 Yui-Kitamura LLC.</comments>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:https://github.com/Yui-KitamuraLLC/YuiFramework.git</connection>
+        <tag>HEAD</tag>
+        <url>https://github.com/Yui-KitamuraLLC/YuiFramework</url>
+    </scm>
 
     <organization>
         <name>Yui-Kitamura LLC.</name>
         <url>https://yui-kitamura.LLC/</url>
     </organization>
-    <contributors>
-        <contributor>
+    <developers>
+        <developer>
             <name>yui-KITAMURA</name>
             <organization>Yui-Kitamura LLC.</organization>
+            <organizationUrl>https://yui-kitamura.LLC/</organizationUrl>
             <url>https://yui-kitamura.eng.pro/private/</url>
             <timezone>JST</timezone>
-        </contributor>
-    </contributors>
+            <email>yui@yui-kitamura.eng.pro</email>
+        </developer>
+    </developers>
 
     <distributionManagement>
         <snapshotRepository>
@@ -38,6 +48,12 @@
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <build>
         <plugins>
@@ -110,8 +126,17 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
