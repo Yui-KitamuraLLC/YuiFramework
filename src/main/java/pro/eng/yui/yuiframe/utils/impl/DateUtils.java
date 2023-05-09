@@ -61,16 +61,25 @@ public class DateUtils implements IDateUtil {
 
     @Override
     public String toStr(Date date, IDateUtil.Formats format){
+        if(YuiFrame.ObjectUtil.isNull(date)){
+            return null;
+        }
         return format.getSDF().format(date);
     }
 
     @Override
     public Timestamp toTS(Calendar calendar){
+        if(YuiFrame.ObjectUtil.isNull(calendar)){
+            return null;
+        }
         return new Timestamp(calendar.getTimeInMillis());
     }
 
     @Override
     public Timestamp toTS(Date date){
+        if(YuiFrame.ObjectUtil.isNull(date)){
+            return null;
+        }
         return new Timestamp(date.getTime());
     }
 
