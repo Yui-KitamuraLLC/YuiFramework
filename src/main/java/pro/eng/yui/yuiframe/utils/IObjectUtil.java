@@ -7,4 +7,6 @@ package pro.eng.yui.yuiframe.utils;
  * @version 1.0.0
  */
 public interface IObjectUtil {
+
+    boolean isNull(Object obj);
 }

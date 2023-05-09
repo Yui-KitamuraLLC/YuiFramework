@@ -26,4 +26,9 @@ public class ObjectUtils implements IObjectUtil {
 
     // methods
 
+
+    @Override
+    public boolean isNull(Object obj) {
+        return obj == null;
+    }
 }
