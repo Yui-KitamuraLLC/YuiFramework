@@ -25,7 +25,7 @@ public interface IDateUtil {
         /** <code>yyyyMMddHHmmss</code>(14digit) style format */
         YMDHMS(new SimpleDateFormat("yyyyMMddHHmmss")),
         /** <code>yyyy/MM/dd HH:mm:ss</code> style format */
-        YMDHMS_slSpCl(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")),
+        YMDHMS_slSpCr(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss")),
         /** <code>HHmmssSSS</code> style format */
         HHMMSSsss(new SimpleDateFormat("HHmmssSSS")),
         /** <code>HH:mm:ss</code> style format */
