@@ -40,6 +40,40 @@ public class StringUtils implements IStringUtil {
         }
         return first.equalsIgnoreCase(second);
     }
+    @Override
+    public boolean eqCase(final String first, final String second){
+        if(first == null && second == null){
+            return true;
+        }
+        if( first == null /* && second != null */ ||
+                /* first != null && */ second == null ){ //片方がnull
+            return false;
+        }
+        return first.equals(second);
+    }
+
+    @Override
+    public boolean eq(Object first, Object second) {
+        if(first == null && second == null){
+            return true;
+        }
+        if( first == null /* && second != null */ ||
+                /* first != null && */ second == null ){ //片方がnull
+            return false;
+        }
+        return first.toString().equalsIgnoreCase(second.toString());
+    }
+    @Override
+    public boolean eqCase(Object first, Object second) {
+        if(first == null && second == null){
+            return true;
+        }
+        if( first == null /* && second != null */ ||
+                /* first != null && */ second == null ){ //片方がnull
+            return false;
+        }
+        return first.toString().equals(second.toString());
+    }
 
     @SuppressWarnings("UnusedAssignment")
     @Override
@@ -118,5 +152,10 @@ public class StringUtils implements IStringUtil {
     @Override
     public boolean isEmpty(Object obj){
         return obj == null || isEmpty(obj.toString());
+    }
+
+    @Override
+    public String nullToEmpty(String value) {
+        return value == null ? EMPTY : value;
     }
 }

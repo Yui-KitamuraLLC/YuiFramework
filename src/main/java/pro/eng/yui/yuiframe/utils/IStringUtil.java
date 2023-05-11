@@ -18,6 +18,26 @@ public interface IStringUtil {
     /** test the two strings are equal. <code>null</code>-safe
      * @see String#equalsIgnoreCase(String)  */
     boolean eq(final String first, final String second);
+    /** test the two strings are equal in Case-sensitive. <code>null</code>-safe
+     * @see String#equals(Object)   */
+    boolean eqCase(final String first, final String second);
+
+    /**
+     * test the two objects String value are equal.
+     * @param first first object to be string value
+     * @param second second object to be string value
+     * @return if two string value are same then <code>true</code>
+     * @see String#equalsIgnoreCase(String)
+     */
+    boolean eq(final Object first, final Object second);
+    /**
+     * test the two objects String value are equal in Case-sensitive.
+     * @param first first object to be string value
+     * @param second second object to be string value
+     * @return if two string value are same then <code>true</code>
+     * @see String#equals(Object)
+     */
+    boolean eqCase(final Object first, final Object second);
 
     /**
      * get joined string
@@ -52,5 +72,11 @@ public interface IStringUtil {
      */
     boolean isEmpty(Object obj);
 
+    /**
+     * if the value is null then return <code>""</code>(Empty string)
+     * @param value the String object or null value
+     * @return if the value is <code>null</code> then empty string(<code>""</code>). Other case, same as original value
+     */
+    String nullToEmpty(final String value);
 
 }
