@@ -6,7 +6,7 @@
 
     <groupId>pro.eng.yui</groupId>
     <artifactId>YuiFramework</artifactId>
-    <version>1.0.0-SNAPSHOT-003</version>
+    <version>1.0.0-SNAPSHOT-004</version>
     <name>Yui-Framework</name>
     <description>Java Utilities Package</description>
     <url>https://github.com/Yui-KitamuraLLC/YuiFramework</url>
@@ -99,6 +99,12 @@
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>export-site</id>
+                        <goals>
+                            <goal>javadoc</goal>
                         </goals>
                     </execution>
                 </executions>

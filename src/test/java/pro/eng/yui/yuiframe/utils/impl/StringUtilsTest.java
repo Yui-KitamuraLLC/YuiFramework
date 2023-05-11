@@ -65,6 +65,92 @@ class StringUtilsTest {
         assertFalse(YuiFrame.StringUtil.eq(first, second));
     }
 
+    static class ToStrOne{
+        @Override
+        public String toString(){
+            return "ONE";
+        }
+    }
+    static class ToStrTwo{
+        @Override
+        public String toString(){
+            return "TWO";
+        }
+    }
+    @Test
+    public void testStrEqObj1(){
+        assertTrue(YuiFrame.StringUtil.eq(new ToStrOne(),"ONE"));
+    }
+    @Test
+    public void testStrEqObj2(){
+        assertFalse(YuiFrame.StringUtil.eq(new ToStrOne(),new ToStrTwo()));
+    }
+
+    /* ** eqCase ** */
+    @Test
+    public void testStrEqC1(){
+        assertTrue(YuiFrame.StringUtil.eqCase(null, null));
+    }
+    @Test
+    public void testStrEqC2(){
+        assertFalse(YuiFrame.StringUtil.eqCase(null, IStringUtil.EMPTY));
+    }
+    @Test
+    public void testStrEqC3(){
+        assertFalse(YuiFrame.StringUtil.eqCase(IStringUtil.EMPTY, null));
+    }
+    @Test
+    public void testStrEqC4(){
+        assertTrue(YuiFrame.StringUtil.eqCase(IStringUtil.EMPTY, IStringUtil.EMPTY));
+    }
+    @Test
+    public void testStrEqC5(){
+        assertFalse(YuiFrame.StringUtil.eqCase(IStringUtil.EMPTY, IStringUtil.SPACE));
+    }
+    @Test
+    public void testStrEqCase1(){
+        assertFalse(YuiFrame.StringUtil.eqCase("ABC", "abc"));
+    }
+    @SuppressWarnings("StringOperationCanBeSimplified")
+    @Test
+    public void testStrEqCase2(){
+        String first = new String("aBc");
+        String second = new String("aBc");
+        assertTrue(YuiFrame.StringUtil.eqCase(first, second));
+    }
+    @Test
+    public void testStrEqCase3(){
+        String first = "aBc";
+        String second = "abC";
+        assertFalse(YuiFrame.StringUtil.eqCase(first, second));
+    }
+    @Test
+    public void testStrEqCase4(){
+        String first = "abCd";
+        String second = "wxYz";
+        assertFalse(YuiFrame.StringUtil.eqCase(first, second));
+    }
+    @Test
+    public void testStrEqCase5(){
+        // does not trim
+        String first = "aBc";
+        String second = "aBc"+ IStringUtil.SPACE;
+        assertFalse(YuiFrame.StringUtil.eqCase(first, second));
+    }
+
+    @Test
+    public void testStrEqCaseObj1(){
+        assertFalse(YuiFrame.StringUtil.eqCase(new ToStrOne(),"one"));
+    }
+    @Test
+    public void testStrEqCaseObj2(){
+        assertTrue(YuiFrame.StringUtil.eqCase(new ToStrOne(),"ONE"));
+    }
+    @Test
+    public void testStrEqCaseObj3(){
+        assertFalse(YuiFrame.StringUtil.eqCase(new ToStrOne(),new ToStrTwo()));
+    }
+
     /* ** concat ** */
     @Test
     public void testStrConcat1(){
@@ -183,6 +269,18 @@ class StringUtilsTest {
     public void testStrIsEmptyObj6(){
         StringBuffer sb = new StringBuffer(IStringUtil.SPACE);
         assertFalse(YuiFrame.StringUtil.isEmpty(sb));
+    }
+
+    /* ** nullToEmpty ** */
+    @Test
+    void testN2E1(){
+        String str = null;
+        assertEquals(YuiFrame.StringUtil.EMPTY, YuiFrame.StringUtil.nullToEmpty(str));
+    }
+    @Test
+    void testN2E2(){
+        String str = "null";
+        assertEquals(str, YuiFrame.StringUtil.nullToEmpty(str));
     }
 
 }
