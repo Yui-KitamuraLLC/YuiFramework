@@ -25,3 +25,7 @@ module yourModuleName {
 ```java
 YuiFrame.StringUtils.eq(arg1, arg2);
 ```
+
+## JavaDoc
+You can see the JavaDocs in [our JavaDoc site](https://yui-kitamurallc.github.io/YuiFramework/)  
+
