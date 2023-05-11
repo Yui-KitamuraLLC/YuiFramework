@@ -13,5 +13,6 @@ public interface IObjectUtil {
      * @param obj check target instance or null value
      * @return if the object is <code>null</code> then <code>true</code>
      */
-    boolean isNull(Object obj);
+    boolean isNull(final Object obj);
+
 }
