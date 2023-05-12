@@ -102,6 +102,9 @@ public class CollectionUtils implements ICollectionUtil {
     }
 
     private <E> String collection2Str(final Collection<E> collection, boolean meta, boolean br){
+        if(YuiFrame.ObjectUtil.isNull(collection)){
+            return "null";
+        }
         StringBuilder sb = new StringBuilder();
         if(meta){
             sb.append("{");
