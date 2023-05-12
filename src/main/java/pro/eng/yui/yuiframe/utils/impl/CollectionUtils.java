@@ -105,6 +105,7 @@ public class CollectionUtils implements ICollectionUtil {
         if(YuiFrame.ObjectUtil.isNull(collection)){
             return "null";
         }
+
         StringBuilder sb = new StringBuilder();
         if(meta){
             sb.append("{");
@@ -120,7 +121,10 @@ public class CollectionUtils implements ICollectionUtil {
         } catch (IndexOutOfBoundsException|NullPointerException e){
             isObjCollection = false;
         }
+
         sb.append("[");
+        if(br){ sb.append(System.lineSeparator()); }
+
         List<E> colStream = collection.stream().toList();
         for(int idx=0; idx<collection.size(); idx++){
             try {
