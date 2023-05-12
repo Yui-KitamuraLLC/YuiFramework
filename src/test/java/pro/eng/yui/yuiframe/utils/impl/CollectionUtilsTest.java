@@ -73,7 +73,16 @@ class CollectionUtilsTest {
         public String toString() {
             return "MyCls-No."+ val;
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if(obj instanceof MyCls mc){
+                return this.val == mc.val;
+            }
+            return false;
+        }
     }
+    private final MyCls[] clsAry3 = {new MyCls(1), new MyCls(2), new MyCls(3)};
     private final List<String> nullCollection = null;
     private final List<String> emptyCollection = new ArrayList<>(3);
     private final List<String> collection = YuiFrame.CollectionUtil.toArrayList("str1","str2", null, "str4");
@@ -82,6 +91,7 @@ class CollectionUtilsTest {
             YuiFrame.CollectionUtil.toList(new MyCls(4), new MyCls(5)),
             YuiFrame.CollectionUtil.toList(new MyCls(6))
     );
+    private final List<MyCls[]> inAry = YuiFrame.CollectionUtil.toList(clsAry3,clsAry3);
 
     @Test
     public void testToString1(){
