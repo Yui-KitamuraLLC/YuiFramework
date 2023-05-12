@@ -19,6 +19,35 @@ class CollectionUtilsTest {
         exp.add("two");
         assertEquals(exp, YuiFrame.CollectionUtil.toList("one", "two"));
     }
+    @Test
+    public void testToLst2(){
+        List<MyCls> exp = new ArrayList<>();
+        exp.add(new MyCls(1));
+        assertEquals(exp, YuiFrame.CollectionUtil.toList(new MyCls(1)));
+    }
+    @Test
+    public void testToLst3(){
+        List<MyCls> exp = new ArrayList<>();
+        exp.add(new MyCls(1));
+        exp.add(new MyCls(2));
+        exp.add(new MyCls(3));
+        assertEquals(exp, YuiFrame.CollectionUtil.toList(clsAry3));
+    }
+    @Test
+    public void testToLst4(){
+        assertNull(YuiFrame.CollectionUtil.toList((Object[]) null));
+    }
+    @Test
+    public void testToLst4a(){
+        assertNotNull(YuiFrame.CollectionUtil.toList((Object) null));
+    }
+    @Test
+    public void testToLst5(){
+        List<MyCls> exp = new ArrayList<>();
+        exp.add(null);
+        exp.add(null);
+        assertEquals(exp, YuiFrame.CollectionUtil.toList((MyCls)null, (MyCls)null));
+    }
 
     /* ** toArrayList ** */
     @Test
@@ -27,6 +56,35 @@ class CollectionUtilsTest {
         exp.add("one");
         exp.add("two");
         assertEquals(exp, YuiFrame.CollectionUtil.toArrayList("one", "two"));
+    }
+    @Test
+    public void testToAryLst2(){
+        List<MyCls> exp = new ArrayList<>();
+        exp.add(new MyCls(1));
+        assertEquals(exp, YuiFrame.CollectionUtil.toArrayList(new MyCls(1)));
+    }
+    @Test
+    public void testToAryLst3(){
+        List<MyCls> exp = new ArrayList<>();
+        exp.add(new MyCls(1));
+        exp.add(new MyCls(2));
+        exp.add(new MyCls(3));
+        assertEquals(exp, YuiFrame.CollectionUtil.toArrayList(clsAry3));
+    }
+    @Test
+    public void testToAryLst4(){
+        assertNull(YuiFrame.CollectionUtil.toArrayList((Object[]) null));
+    }
+    @Test
+    public void testToAryLst4a(){
+        assertNotNull(YuiFrame.CollectionUtil.toArrayList((Object) null));
+    }
+    @Test
+    public void testToAryLst5(){
+        List<MyCls> exp = new ArrayList<>();
+        exp.add(null);
+        exp.add(null);
+        assertEquals(exp, YuiFrame.CollectionUtil.toArrayList((MyCls)null, (MyCls)null));
     }
 
     /* ** isEmpty(ary) ** */

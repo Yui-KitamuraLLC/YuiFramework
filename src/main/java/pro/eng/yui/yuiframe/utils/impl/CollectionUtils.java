@@ -30,11 +30,17 @@ public class CollectionUtils implements ICollectionUtil {
     // methods
     @Override
     public <T> List<T> toList(final T... aryObj) {
+        if(YuiFrame.ObjectUtil.isNull(aryObj)){
+            return null;
+        }
         return Arrays.asList(aryObj);
     }
 
     @Override
     public <T> ArrayList<T> toArrayList(final T... aryObj) {
+        if(YuiFrame.ObjectUtil.isNull(aryObj)){
+            return null;
+        }
         return new ArrayList<>(Arrays.asList(aryObj));
     }
 
