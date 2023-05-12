@@ -40,7 +40,10 @@ public class CollectionUtils implements ICollectionUtil {
 
     @Override
     public boolean isEmpty(final Object[] array) {
-        return false;
+        if(YuiFrame.ObjectUtil.isNull(array)){
+            return true;
+        }
+        return array.length == 0;
     }
 
     @Override
