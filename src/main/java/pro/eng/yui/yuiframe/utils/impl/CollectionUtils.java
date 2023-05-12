@@ -66,18 +66,39 @@ public class CollectionUtils implements ICollectionUtil {
     }
 
     @Override
+    public String toString(Object[] array) {
+        return array2Str(array, false, false);
+    }
+
+    @Override
     public String toStrMeta(final Collection<?> collection) {
         return collection2Str(collection, true, false);
+    }
+    @Override
+    public String toStrMeta(Object[] array) {
+        return array2Str(array, true, false);
     }
 
     @Override
     public String toStringBr(final Collection<?> collection) {
         return collection2Str(collection, false, true);
     }
+    @Override
+    public String toStringBr(Object[] array) {
+        return array2Str(array, false, true);
+    }
 
     @Override
     public String toStrMetaBr(final Collection<?> collection) {
         return collection2Str(collection, true, true);
+    }
+    @Override
+    public String toStrMetaBr(Object[] array) {
+        return array2Str(array, true, true);
+    }
+
+    private String array2Str(final Object[] array, boolean meta, boolean br){
+        return collection2Str(YuiFrame.CollectionUtil.toArrayList(array), meta, br);
     }
 
     private <E> String collection2Str(final Collection<E> collection, boolean meta, boolean br){
@@ -104,7 +125,11 @@ public class CollectionUtils implements ICollectionUtil {
         for(int idx=0; idx<collection.size(); idx++){
             try {
                 if (isObjCollection) {
-                    sb.append(collection2Str((Collection<?>) colStream.get(idx), meta, br));
+                    if(colStream.get(idx).getClass().isArray()){
+                        sb.append(array2Str((Object[])colStream.get(idx),meta, br));
+                    }else {
+                        sb.append(collection2Str((Collection<?>) colStream.get(idx), meta, br));
+                    }
                 } else {
                     sb.append(colStream.get(idx).toString());
                 }

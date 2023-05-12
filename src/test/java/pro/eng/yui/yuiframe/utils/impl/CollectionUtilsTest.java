@@ -170,9 +170,34 @@ class CollectionUtilsTest {
                 YuiFrame.CollectionUtil.toString(inCol)
         );
     }
+    @Test
+    public void testToString5(){
+        assertEquals(
+                "[[MyCls-No.1,MyCls-No.2,MyCls-No.3],[MyCls-No.1,MyCls-No.2,MyCls-No.3]]",
+                YuiFrame.CollectionUtil.toString(inAry)
+        );
+    }
+
+    /* ** toString(ary) ** */
+    @Test
+    public void testToString6(){
+        assertEquals("[MyCls-No.1,MyCls-No.2,MyCls-No.3]", YuiFrame.CollectionUtil.toString(clsAry3));
+    }
+    @Test
+    public void testToString7(){
+        assertEquals("null", YuiFrame.CollectionUtil.toString((MyCls[])null));
+    }
 
     /* ** toStrMeta(col) ** */
 
+    /* ** toString(ary) ** */
+    @Test
+    public void testToStrMeta6(){
+        assertEquals(
+                "{size:3,data:[MyCls-No.1,MyCls-No.2,MyCls-No.3]}",
+                YuiFrame.CollectionUtil.toStrMeta(clsAry3)
+        );
+    }
 
     /* ** toStringBr(col) ** */
 

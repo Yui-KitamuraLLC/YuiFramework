@@ -57,6 +57,11 @@ public interface ICollectionUtil {
      * @return single line string value
      */
     String toString(final Collection<?> collection);
+    /**
+     * Array version of {@link #toString(Collection)}
+     * @see #toString(Collection)
+     */
+    String toString(final Object[] array);
 
     /**
      * Format collection instance to following format.
@@ -67,6 +72,11 @@ public interface ICollectionUtil {
      * @return single line string value
      */
     String toStrMeta(final Collection<?> collection);
+    /**
+     * Array version of {@link #toStrMeta(Collection)} 
+     * @see #toStrMeta(Collection)
+     */
+    String toStrMeta(final Object[] array);
 
     /**
      * Format collection instance to following format.
@@ -89,6 +99,11 @@ public interface ICollectionUtil {
      * @return multiple line string value
      */
     String toStringBr(final Collection<?> collection);
+    /**
+     * Array version of {@link #toStringBr(Collection)}
+     * @see #toStringBr(Collection)
+     */
+    String toStringBr(final Object[] array);
 
     /**
      * Format collection instance to following format.
@@ -104,5 +119,10 @@ public interface ICollectionUtil {
      * @return multiple line string value
      */
     String toStrMetaBr(final Collection<?> collection);
+    /**
+     * Array version of {@link #toStrMetaBr(Collection)}
+     * @see #toStrMetaBr(Collection)
+     */
+    String toStrMetaBr(final Object[] array);
 
 }
