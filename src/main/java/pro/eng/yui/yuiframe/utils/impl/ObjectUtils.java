@@ -33,7 +33,7 @@ public class ObjectUtils implements IObjectUtil {
     }
 
     @Override
-    public boolean equals(Object first, Object second) {
+    public boolean equals(final Object first, final Object second) {
         if(first == null && second == null){
             return true;
         }
