@@ -17,7 +17,7 @@ public interface ICollectionUtil {
      * @param aryObj values array
      * @param <T>    Type of parameters
      * @return an {@link java.util.List} that contains all arguments
-     * @see java.util.List#of(Object[])
+     * @see java.util.Arrays#asList(Object[]) 
      */
     <T> List<T> toList(final T... aryObj);
 
