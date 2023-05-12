@@ -189,6 +189,56 @@ class CollectionUtilsTest {
     }
 
     /* ** toStrMeta(col) ** */
+    @Test
+    public void testToStrMeta1(){
+        assertEquals("null", YuiFrame.CollectionUtil.toStrMeta(nullCollection));
+    }
+    @Test
+    public void testToStrMeta2(){
+        assertEquals("{size:0,data:[]}", YuiFrame.CollectionUtil.toStrMeta(emptyCollection));
+    }
+    @Test
+    public void testToStrMeta3(){
+        assertEquals("{size:4,data:[str1,str2,null,str4]}", YuiFrame.CollectionUtil.toStrMeta(collection));
+    }
+    @Test
+    public void testToStrMeta3a(){
+        List<String> cln = new ArrayList<>();
+        cln.add(null);
+        assertEquals("{size:1,data:[null]}", YuiFrame.CollectionUtil.toStrMeta(cln));
+    }
+    @Test
+    public void testToStrMeta3b(){
+        List<String> cln = new ArrayList<>();
+        assertEquals("{size:0,data:[]}", YuiFrame.CollectionUtil.toStrMeta(cln));
+    }
+    @Test
+    public void testToStrMeta3c(){
+        List<String[]> cln = new ArrayList<>();
+        cln.add(null);
+        assertEquals("{size:1,data:[null]}", YuiFrame.CollectionUtil.toStrMeta(cln));
+    }
+    @Test
+    public void testToStrMeta3d(){
+        List<String[]> cln = new ArrayList<>();
+        assertEquals("{size:0,data:[]}", YuiFrame.CollectionUtil.toStrMeta(cln));
+    }
+    @Test
+    public void testToStrMeta4(){
+        assertEquals(
+                "{size:3,data:[{size:3,data:[MyCls-No.1,MyCls-No.2,MyCls-No.3]},"+
+                        "{size:2,data:[MyCls-No.4,MyCls-No.5]},{size:1,data:[MyCls-No.6]}]}",
+                YuiFrame.CollectionUtil.toStrMeta(inCol)
+        );
+    }
+    @Test
+    public void testToStrMeta5(){
+        assertEquals(
+                "{size:2,data:[{size:3,data:[MyCls-No.1,MyCls-No.2,MyCls-No.3]}"+
+                ",{size:3,data:[MyCls-No.1,MyCls-No.2,MyCls-No.3]}]}",
+                YuiFrame.CollectionUtil.toStrMeta(inAry)
+        );
+    }
 
     /* ** toString(ary) ** */
     @Test
