@@ -105,7 +105,7 @@ public class CollectionUtils implements ICollectionUtil {
             }catch(NullPointerException npe){
                 sb.append((String) null);
             }
-            if(idx < collection.size()){
+            if(idx < collection.size()-1){
                 sb.append(",");
             }
             if(br){ sb.append(System.lineSeparator()); }
