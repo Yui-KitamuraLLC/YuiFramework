@@ -89,14 +89,21 @@ public class CollectionUtils implements ICollectionUtil {
             isObjCollection = YuiFrame.ObjectUtil.isTypeOf(obj, Collection.class) || obj.getClass().isArray();
         } catch (IndexOutOfBoundsException e){
             isObjCollection = false;
+        } catch(NullPointerException npe){
+            sb.append((String) null);
+            return sb.toString();
         }
         sb.append("[");
         List<E> colStream = collection.stream().toList();
         for(int idx=0; idx<collection.size(); idx++){
-            if (isObjCollection) {
-                sb.append(collection2Str((Collection<?>) colStream.get(idx), meta, br));
-            }else{
-                sb.append(colStream.get(idx).toString());
+            try {
+                if (isObjCollection) {
+                    sb.append(collection2Str((Collection<?>) colStream.get(idx), meta, br));
+                } else {
+                    sb.append(colStream.get(idx).toString());
+                }
+            }catch(NullPointerException npe){
+                sb.append((String) null);
             }
             if(idx < collection.size()){
                 sb.append(",");
