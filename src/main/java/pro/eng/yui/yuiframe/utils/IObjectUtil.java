@@ -29,4 +29,13 @@ public interface IObjectUtil {
      * @return almost same to {@link Object#equals(Object)}. See the document body
      */
     boolean equals(final Object first, final Object second);
+
+    /**
+     * check the instance is extends or implements the class
+     * @param instance instance that to be checked
+     * @param superClz expected super class or interface
+     * @return if the instance are the child of superClz then <code>true</code>
+     * @see java.lang.Class#isInstance(Object)
+     */
+    boolean isTypeOf(final Object instance, final Class superClz);
 }

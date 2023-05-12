@@ -43,4 +43,9 @@ public class ObjectUtils implements IObjectUtil {
         }
         return first.equals(second);
     }
+
+    @Override
+    public boolean isTypeOf(final Object instance, final Class superClz) {
+        return superClz.isInstance(instance);
+    }
 }
