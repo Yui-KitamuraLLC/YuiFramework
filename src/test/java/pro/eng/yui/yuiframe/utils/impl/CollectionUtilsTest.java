@@ -12,7 +12,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class CollectionUtilsTest {
 
     /* ** toList ** */
-
+    @Test
+    public void testToLst1(){
+        List<String> exp = new ArrayList<>();
+        exp.add("one");
+        exp.add("two");
+        assertEquals(exp, YuiFrame.CollectionUtil.toList("one", "two"));
+    }
 
     /* ** toArrayList ** */
     @Test
@@ -24,10 +30,38 @@ class CollectionUtilsTest {
     }
 
     /* ** isEmpty(ary) ** */
-
+    @Test
+    public void testIsEmptyAry1(){
+        String[] ary = null;
+        assertTrue(YuiFrame.CollectionUtil.isEmpty(ary));
+    }
+    @Test
+    public void testIsEmptyAry2(){
+        String[] ary = {null};
+        assertFalse(YuiFrame.CollectionUtil.isEmpty(ary));
+    }
+    @Test
+    public void testIsEmptyAry3(){
+        String[] ary = {"str1", "str2"};
+        assertFalse(YuiFrame.CollectionUtil.isEmpty(ary));
+    }
 
     /* ** isEmpty(collection) ** */
-
+    @Test
+    public void testIsEmptyCol1(){
+        List<String> col = null;
+        assertTrue(YuiFrame.CollectionUtil.isEmpty(col));
+    }
+    @Test
+    public void testIsEmptyCol2(){
+        List<String> col = new ArrayList<>(3);
+        assertTrue(YuiFrame.CollectionUtil.isEmpty(col));
+    }
+    @Test
+    public void testIsEmptyCol3(){
+        List<String> col = YuiFrame.CollectionUtil.toArrayList("str1","str2");
+        assertFalse(YuiFrame.CollectionUtil.isEmpty(col));
+    }
 
     /* ** toString(col) ** */
     private static class MyCls{
