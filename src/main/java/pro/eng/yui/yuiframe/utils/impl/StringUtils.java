@@ -141,7 +141,7 @@ public class StringUtils implements IStringUtil {
     }
     /** @see StringUtils#join(CharSequence, Iterable) */
     private String join(final CharSequence delimiter, final CharSequence... arg){
-        List<CharSequence> argList = YuiFrame.ListUtil.toList(arg);
+        List<CharSequence> argList = YuiFrame.CollectionUtil.toList(arg);
         return join(delimiter, argList);
     }
 
