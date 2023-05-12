@@ -8,6 +8,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SuppressWarnings("ConstantValue")
 class CollectionUtilsTest {
 
     /* ** toList ** */
@@ -30,7 +31,7 @@ class CollectionUtilsTest {
 
     /* ** toString(col) ** */
     private static class MyCls{
-        private int val;
+        private final int val;
         public MyCls(int value){
             val = value;
         }
