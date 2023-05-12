@@ -248,6 +248,10 @@ class CollectionUtilsTest {
                 YuiFrame.CollectionUtil.toStrMeta(clsAry3)
         );
     }
+    @Test
+    public void testToStrMeta7(){
+        assertEquals("null", YuiFrame.CollectionUtil.toStrMeta((MyCls[])null));
+    }
 
     /* ** toStringBr(col) ** */
 
