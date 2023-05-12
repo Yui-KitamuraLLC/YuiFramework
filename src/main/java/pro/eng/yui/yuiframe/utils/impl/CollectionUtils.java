@@ -147,6 +147,7 @@ public class CollectionUtils implements ICollectionUtil {
         }
         sb.append("]");
         if(meta){
+            if(br){ sb.append(System.lineSeparator()); }
             sb.append("}");
         }
         return sb.toString();
