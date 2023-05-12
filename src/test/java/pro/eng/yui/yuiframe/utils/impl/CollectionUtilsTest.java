@@ -71,7 +71,7 @@ class CollectionUtilsTest {
         }
         @Override
         public String toString() {
-            return "this is MyCls No."+ val;
+            return "MyCls-No."+ val;
         }
     }
     private final List<String> nullCollection = null;
@@ -83,6 +83,25 @@ class CollectionUtilsTest {
             YuiFrame.CollectionUtil.toList(new MyCls(6))
     );
 
+    @Test
+    public void testToString1(){
+        assertEquals("null", YuiFrame.CollectionUtil.toString(nullCollection));
+    }
+    @Test
+    public void testToString2(){
+        assertEquals("[]", YuiFrame.CollectionUtil.toString(emptyCollection));
+    }
+    @Test
+    public void testToString3(){
+        assertEquals("[str1,str2,null,str4]", YuiFrame.CollectionUtil.toString(collection));
+    }
+    @Test
+    public void testToString4(){
+        assertEquals(
+                "[[MyCls-No.1,MyCls-No.2,MyCls-No.3],[MyCls-No.4,MyCls-No.5],[MyCls-No.6]]",
+                YuiFrame.CollectionUtil.toString(inCol)
+        );
+    }
 
     /* ** toStrMeta(col) ** */
 
