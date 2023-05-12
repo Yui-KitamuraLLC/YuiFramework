@@ -141,8 +141,8 @@ class CollectionUtilsTest {
         }
     }
     private final MyCls[] clsAry3 = {new MyCls(1), new MyCls(2), new MyCls(3)};
-    private final List<String> nullCollection = null;
-    private final List<String> emptyCollection = new ArrayList<>(3);
+    private static final List<String> nullCollection = null;
+    private static final List<String> emptyCollection = new ArrayList<>(3);
     private final List<String> collection = YuiFrame.CollectionUtil.toArrayList("str1","str2", null, "str4");
     private final List<List<MyCls>> inCol = YuiFrame.CollectionUtil.toList(
             YuiFrame.CollectionUtil.toList(new MyCls(1), new MyCls(2), new MyCls(3)),
@@ -150,6 +150,7 @@ class CollectionUtilsTest {
             YuiFrame.CollectionUtil.toList(new MyCls(6))
     );
     private final List<MyCls[]> inAry = YuiFrame.CollectionUtil.toList(clsAry3,clsAry3);
+    private static final String crlf = System.lineSeparator();
 
     @Test
     public void testToString1(){
@@ -254,7 +255,53 @@ class CollectionUtilsTest {
     }
 
     /* ** toStringBr(col) ** */
+    @Test
+    public void testToStringBr1(){
+        assertEquals("null", YuiFrame.CollectionUtil.toStringBr(nullCollection));
+    }
+    @Test
+    public void testToStringBr2(){
+        assertEquals("["+crlf+"]", YuiFrame.CollectionUtil.toStringBr(emptyCollection));
+    }
+    @Test
+    public void testToStringBr3(){
+        assertEquals(
+                YuiFrame.StringUtil.concat("[",crlf,"str1,",crlf,"str2,",crlf,"null,",crlf,"str4",crlf,"]"),
+                YuiFrame.CollectionUtil.toStringBr(collection)
+        );
+    }
+    @Test
+    public void testToStringBr4(){
+        assertEquals(
+                YuiFrame.StringUtil.concat(
+                        "[",crlf,"[",crlf,"MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"],",crlf,
+                        "[",crlf,"MyCls-No.4,",crlf,"MyCls-No.5",crlf,"],",crlf,
+                        "[",crlf,"MyCls-No.6",crlf,"]",crlf,"]"),
+                YuiFrame.CollectionUtil.toStringBr(inCol)
+        );
+    }
+    @Test
+    public void testToStringBr5(){
+        assertEquals(
+                YuiFrame.StringUtil.concat(
+                    "[",crlf,"[",crlf,"MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"],",crlf
+                        ,"[",crlf,"MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"]",crlf,"]"),
+                YuiFrame.CollectionUtil.toStringBr(inAry)
+        );
+    }
 
+    /* ** toString(ary) ** */
+    @Test
+    public void testToStringBr6(){
+        assertEquals(
+                YuiFrame.StringUtil.concat("[",crlf,"MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"]"),
+                YuiFrame.CollectionUtil.toStringBr(clsAry3)
+        );
+    }
+    @Test
+    public void testToStringBr7(){
+        assertEquals("null", YuiFrame.CollectionUtil.toStringBr((MyCls[])null));
+    }
 
     /* ** toStringMetaBr(col) ** */
 
