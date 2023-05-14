@@ -304,6 +304,96 @@ class CollectionUtilsTest {
     }
 
     /* ** toStringMetaBr(col) ** */
+    @Test
+    public void testToStrMetaBr1(){
+        assertEquals("null", YuiFrame.CollectionUtil.toStrMetaBr(nullCollection));
+    }
+    @Test
+    public void testToStrMetaBr2(){
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:0,",crlf,"data:[",crlf,"]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(emptyCollection)
+        );
+    }
+    @Test
+    public void testToStrMetaBr3(){
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:4,",crlf,"data:[",crlf,
+                        "str1,",crlf,"str2,",crlf,"null,",crlf,"str4",crlf,"]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(collection)
+        );
+    }
+    @Test
+    public void testToStrMetaBr3a(){
+        List<String> cln = new ArrayList<>();
+        cln.add(null);
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:1,",crlf,"data:[",crlf,"null",crlf,"]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(cln)
+        );
+    }
+    @Test
+    public void testToStrMetaBr3b(){
+        List<String> cln = new ArrayList<>();
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:0,",crlf,"data:[",crlf,"]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(cln)
+        );
+    }
+    @Test
+    public void testToStrMetaBr3c(){
+        List<String[]> cln = new ArrayList<>();
+        cln.add(null);
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:1,",crlf,"data:[",crlf,"null",crlf,"]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(cln)
+        );
+    }
+    @Test
+    public void testToStrMetaBr3d(){
+        List<String[]> cln = new ArrayList<>();
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:0,",crlf,"data:[",crlf,"]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(cln)
+        );
+    }
+    @Test
+    public void testToStrMetaBr4(){
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:3,",crlf,
+                        "data:[",crlf,"{",crlf,"size:3,",crlf,"data:[",crlf,
+                        "MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"]",crlf,"},",crlf,
+                        "{",crlf,"size:2,",crlf,"data:[",crlf,"MyCls-No.4,",crlf,"MyCls-No.5",crlf,"]",crlf,"},",crlf,
+                        "{",crlf,"size:1,",crlf,"data:[",crlf,"MyCls-No.6",crlf,"]",crlf,"}",crlf,
+                        "]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(inCol)
+        );
+    }
+    @Test
+    public void testToStrMetaBr5(){
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:2,",crlf,"data:[",crlf,
+                        "{",crlf,"size:3,",crlf,"data:[",crlf,
+                        "MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"]",crlf,"},",crlf,
+                        "{",crlf,"size:3,",crlf,"data:[",crlf,
+                        "MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"]",crlf,"}",crlf,
+                        "]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(inAry)
+        );
+    }
 
+    /* ** toString(ary) ** */
+    @Test
+    public void testToStrMetaBr6(){
+        assertEquals(
+                YuiFrame.StringUtil.concat("{",crlf,"size:3,",crlf,"data:[",crlf,
+                        "MyCls-No.1,",crlf,"MyCls-No.2,",crlf,"MyCls-No.3",crlf,"]",crlf,"}"),
+                YuiFrame.CollectionUtil.toStrMetaBr(clsAry3)
+        );
+    }
+    @Test
+    public void testToStrMetaBr7(){
+        assertEquals("null", YuiFrame.CollectionUtil.toStrMetaBr((MyCls[])null));
+    }
 
 }
