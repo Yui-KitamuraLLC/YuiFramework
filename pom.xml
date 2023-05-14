@@ -6,10 +6,11 @@
 
     <groupId>pro.eng.yui</groupId>
     <artifactId>YuiFramework</artifactId>
-    <version>1.0.0-SNAPSHOT-004</version>
+    <version>1.0.0-SNAPSHOT-005</version>
     <name>Yui-Framework</name>
     <description>Java Utilities Package</description>
     <url>https://github.com/Yui-KitamuraLLC/YuiFramework</url>
+    <inceptionYear>2023</inceptionYear>
     <licenses>
         <license>
             <name>Apache-2.0</name>
@@ -22,6 +23,10 @@
         <tag>HEAD</tag>
         <url>https://github.com/Yui-KitamuraLLC/YuiFramework</url>
     </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/Yui-KitamuraLLC/YuiFramework/issues</url>
+    </issueManagement>
 
     <organization>
         <name>Yui-Kitamura LLC.</name>

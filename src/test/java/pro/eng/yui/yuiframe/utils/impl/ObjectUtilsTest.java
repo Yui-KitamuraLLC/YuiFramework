@@ -5,6 +5,9 @@ import pro.eng.yui.yuiframe.YuiFrame;
 import pro.eng.yui.yuiframe.utils.IObjectUtil;
 import pro.eng.yui.yuiframe.utils.IStringUtil;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ObjectUtilsTest {
@@ -78,6 +81,32 @@ class ObjectUtilsTest {
         Object obj1 = new DummyF();
         Object obj2 = new DummyT();
         assertFalse(YuiFrame.ObjectUtil.equals(obj1, obj2));
+    }
+
+    /* ** isTypeOf ** */
+    @Test
+    void testIsTypeOf(){
+        assertTrue(YuiFrame.ObjectUtil.isTypeOf(new Object(), Object.class));
+    }
+    @Test
+    void testIsTypeOf2(){
+        assertTrue(YuiFrame.ObjectUtil.isTypeOf("String", Object.class));
+    }
+    @Test
+    void testIsTypeOf3(){
+        assertFalse(YuiFrame.ObjectUtil.isTypeOf("String", Character.class));
+    }
+    @Test
+    void testIsTypeOf3a(){
+        assertTrue(YuiFrame.ObjectUtil.isTypeOf("String", CharSequence.class));
+    }
+    @Test
+    void testIsTypeOf4(){
+        assertTrue(YuiFrame.ObjectUtil.isTypeOf(0, Number.class));
+    }
+    @Test
+    void testIsTypeOf5(){
+        assertTrue(YuiFrame.ObjectUtil.isTypeOf(new ArrayList<String>(), Collection.class));
     }
 
 }

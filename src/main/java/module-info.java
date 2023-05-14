@@ -1,5 +1,12 @@
 /**
- * module info of <q>YuiFramework</q>
+ * module of <q>YuiFramework</q>
+ * Provides Utilities
+ * <pre>
+ *     // methods usage
+ *     YuiFrame.StringUtil.eq(str1, str2);
+ *     // const usage
+ *     YuiFrame.StringUtil.EMPTY;
+ * </pre>
  * @author yui-KITAMURA
  * @since 1.0.0
  */

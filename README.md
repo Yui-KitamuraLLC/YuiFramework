@@ -12,7 +12,7 @@ So please use the **latest** if you don`t have any special issue.
     <!-- https://mvnrepository.com/artifact/pro.eng.yui/YuiFramework -->
     <groupId>pro.eng.yui</groupId>
     <artifactId>YuiFramework</artifactId>
-    <version>1.0.0-SNAPSHOT-003</version>
+    <version>1.0.0-SNAPSHOT-005</version>
 </dependency>
 ```
 ### module-info.java

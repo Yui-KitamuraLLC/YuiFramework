@@ -18,7 +18,7 @@ import pro.eng.yui.yuiframe.utils.impl.StringUtils;
 public final class YuiFrame {
 
     /** Utilities of Collection */
-    public final static ICollectionUtil ListUtil = CollectionUtils.getInstance();
+    public final static ICollectionUtil CollectionUtil = CollectionUtils.getInstance();
     /** Utilities of Strings */
     public final static IStringUtil StringUtil = StringUtils.getInstance();
     /** Utilities of Object */

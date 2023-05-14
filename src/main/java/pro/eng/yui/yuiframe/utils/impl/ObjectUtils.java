@@ -33,7 +33,7 @@ public class ObjectUtils implements IObjectUtil {
     }
 
     @Override
-    public boolean equals(Object first, Object second) {
+    public boolean equals(final Object first, final Object second) {
         if(first == null && second == null){
             return true;
         }
@@ -42,5 +42,10 @@ public class ObjectUtils implements IObjectUtil {
             return false;
         }
         return first.equals(second);
+    }
+
+    @Override
+    public boolean isTypeOf(final Object instance, final Class superClz) {
+        return superClz.isInstance(instance);
     }
 }
