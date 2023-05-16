@@ -6,6 +6,8 @@ import pro.eng.yui.yuiframe.utils.IStringUtil;
 import java.util.Iterator;
 import java.util.List;
 
+import static pro.eng.yui.yuiframe.YuiFrame.strConst;
+
 /**
  * Implement of common operation for Strings
  * @since 1.0.0
@@ -80,19 +82,19 @@ public class StringUtils implements IStringUtil {
     public String concat(Iterable<? extends CharSequence> arg){
         for(CharSequence cs : arg){
             if(cs == null){
-                cs = SPACE;
+                cs = strConst.SPACE;
             }
         }
-        return join(EMPTY, arg);
+        return join(strConst.EMPTY, arg);
     }
     @Override
     public String concat(CharSequence... arg){
         for(int idx = 0; idx < arg.length; idx++){
             if(arg[idx] == null){
-                arg[idx] = SPACE;
+                arg[idx] = strConst.SPACE;
             }
         }
-        return join(EMPTY, arg);
+        return join(strConst.EMPTY, arg);
     }
 
     @SuppressWarnings("UnusedAssignment")
@@ -100,7 +102,7 @@ public class StringUtils implements IStringUtil {
     public String concatWithDelimiter(CharSequence delimiter, Iterable<? extends CharSequence> arg){
         for(CharSequence cs : arg){
             if(cs == null){
-                cs = SPACE;
+                cs = strConst.SPACE;
             }
         }
         return join(delimiter, arg);
@@ -109,7 +111,7 @@ public class StringUtils implements IStringUtil {
     public String concatWithDelimiter(CharSequence delimiter, CharSequence... arg){
         for(int idx = 0; idx < arg.length; idx++){
             if(arg[idx] == null){
-                arg[idx] = SPACE;
+                arg[idx] = strConst.SPACE;
             }
         }
         return join(delimiter, arg);
@@ -122,14 +124,14 @@ public class StringUtils implements IStringUtil {
      * @return one string value that joins all arguments each separated by delimiter
      */
     private String join(final CharSequence delimiter, final Iterable<? extends CharSequence> arg){
-        String delimitStr = (delimiter == null) ? SPACE : delimiter.toString();
+        String delimitStr = (delimiter == null) ? strConst.SPACE : delimiter.toString();
         StringBuilder sb = new StringBuilder();
 
         Iterator<? extends CharSequence> itr = arg.iterator();
         while(itr.hasNext()){
             CharSequence cs = itr.next();
             if(cs == null){
-                sb.append(SPACE);
+                sb.append(strConst.SPACE);
             }else{
                 sb.append(cs);
             }
@@ -156,6 +158,6 @@ public class StringUtils implements IStringUtil {
 
     @Override
     public String nullToEmpty(String value) {
-        return value == null ? EMPTY : value;
+        return value == null ? strConst.EMPTY : value;
     }
 }

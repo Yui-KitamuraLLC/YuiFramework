@@ -1,5 +1,6 @@
 package pro.eng.yui.yuiframe;
 
+import pro.eng.yui.yuiframe.consts.StringConst;
 import pro.eng.yui.yuiframe.utils.ICollectionUtil;
 import pro.eng.yui.yuiframe.utils.IDateUtil;
 import pro.eng.yui.yuiframe.utils.IObjectUtil;
@@ -17,6 +18,11 @@ import pro.eng.yui.yuiframe.utils.impl.StringUtils;
  */
 public final class YuiFrame {
 
+    /* Const */
+    /** Constant values with String */
+    public final static StringConst strConst = StringConst.getInstance();
+
+    /* Util */
     /** Utilities of Collection */
     public final static ICollectionUtil CollectionUtil = CollectionUtils.getInstance();
     /** Utilities of Strings */
