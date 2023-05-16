@@ -14,7 +14,7 @@ public final class YuiFrame {
 
     /* Const */
     /** Constant values with String */
-    public final static StringConst strConst = StringConst.getInstance();
+    public final static StringConst StrConst = StringConst.getInstance();
 
     /* Util */
     /** Utilities of Collection */
