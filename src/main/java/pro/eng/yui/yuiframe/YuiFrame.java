@@ -1,14 +1,8 @@
 package pro.eng.yui.yuiframe;
 
 import pro.eng.yui.yuiframe.consts.StringConst;
-import pro.eng.yui.yuiframe.utils.ICollectionUtil;
-import pro.eng.yui.yuiframe.utils.IDateUtil;
-import pro.eng.yui.yuiframe.utils.IObjectUtil;
-import pro.eng.yui.yuiframe.utils.IStringUtil;
-import pro.eng.yui.yuiframe.utils.impl.CollectionUtils;
-import pro.eng.yui.yuiframe.utils.impl.DateUtils;
-import pro.eng.yui.yuiframe.utils.impl.ObjectUtils;
-import pro.eng.yui.yuiframe.utils.impl.StringUtils;
+import pro.eng.yui.yuiframe.utils.*;
+import pro.eng.yui.yuiframe.utils.impl.*;
 
 /**
  * フレームワークのメインクラス
