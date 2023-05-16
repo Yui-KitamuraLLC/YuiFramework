@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static pro.eng.yui.yuiframe.YuiFrame.strConst;
 
 class StringUtilsTest {
 
@@ -18,19 +19,19 @@ class StringUtilsTest {
     }
     @Test
     public void testStrEq2(){
-        assertFalse(YuiFrame.StringUtil.eq(null, IStringUtil.EMPTY));
+        assertFalse(YuiFrame.StringUtil.eq(null, strConst.EMPTY));
     }
     @Test
     public void testStrEq3(){
-        assertFalse(YuiFrame.StringUtil.eq(IStringUtil.EMPTY, null));
+        assertFalse(YuiFrame.StringUtil.eq(strConst.EMPTY, null));
     }
     @Test
     public void testStrEq4(){
-        assertTrue(YuiFrame.StringUtil.eq(IStringUtil.EMPTY, IStringUtil.EMPTY));
+        assertTrue(YuiFrame.StringUtil.eq(strConst.EMPTY, strConst.EMPTY));
     }
     @Test
     public void testStrEq5(){
-        assertFalse(YuiFrame.StringUtil.eq(IStringUtil.EMPTY, IStringUtil.SPACE));
+        assertFalse(YuiFrame.StringUtil.eq(strConst.EMPTY, strConst.SPACE));
     }
 
     @Test
@@ -61,7 +62,7 @@ class StringUtilsTest {
     public void testStrEqIgCase5(){
         // does not trim
         String first = "aBc";
-        String second = "abC"+ IStringUtil.SPACE;
+        String second = "abC"+ strConst.SPACE;
         assertFalse(YuiFrame.StringUtil.eq(first, second));
     }
 
@@ -93,19 +94,19 @@ class StringUtilsTest {
     }
     @Test
     public void testStrEqC2(){
-        assertFalse(YuiFrame.StringUtil.eqCase(null, IStringUtil.EMPTY));
+        assertFalse(YuiFrame.StringUtil.eqCase(null, strConst.EMPTY));
     }
     @Test
     public void testStrEqC3(){
-        assertFalse(YuiFrame.StringUtil.eqCase(IStringUtil.EMPTY, null));
+        assertFalse(YuiFrame.StringUtil.eqCase(strConst.EMPTY, null));
     }
     @Test
     public void testStrEqC4(){
-        assertTrue(YuiFrame.StringUtil.eqCase(IStringUtil.EMPTY, IStringUtil.EMPTY));
+        assertTrue(YuiFrame.StringUtil.eqCase(strConst.EMPTY, strConst.EMPTY));
     }
     @Test
     public void testStrEqC5(){
-        assertFalse(YuiFrame.StringUtil.eqCase(IStringUtil.EMPTY, IStringUtil.SPACE));
+        assertFalse(YuiFrame.StringUtil.eqCase(strConst.EMPTY, strConst.SPACE));
     }
     @Test
     public void testStrEqCase1(){
@@ -134,7 +135,7 @@ class StringUtilsTest {
     public void testStrEqCase5(){
         // does not trim
         String first = "aBc";
-        String second = "aBc"+ IStringUtil.SPACE;
+        String second = "aBc"+ strConst.SPACE;
         assertFalse(YuiFrame.StringUtil.eqCase(first, second));
     }
 
@@ -226,11 +227,11 @@ class StringUtilsTest {
     }
     @Test
     public void testStrIsEmpty2(){
-        assertTrue(YuiFrame.StringUtil.isEmpty(IStringUtil.EMPTY));
+        assertTrue(YuiFrame.StringUtil.isEmpty(strConst.EMPTY));
     }
     @Test
     public void testStrIsEmpty3(){
-        assertFalse(YuiFrame.StringUtil.isEmpty(IStringUtil.SPACE));
+        assertFalse(YuiFrame.StringUtil.isEmpty(strConst.SPACE));
     }
     @Test
     public void testStrIsEmpty4(){
@@ -240,7 +241,7 @@ class StringUtilsTest {
     static class EmptyObj{
         @Override
         public String toString() {
-            return IStringUtil.EMPTY;
+            return strConst.EMPTY;
         }
     }
     @Test
@@ -267,7 +268,7 @@ class StringUtilsTest {
     }
     @Test
     public void testStrIsEmptyObj6(){
-        StringBuffer sb = new StringBuffer(IStringUtil.SPACE);
+        StringBuffer sb = new StringBuffer(strConst.SPACE);
         assertFalse(YuiFrame.StringUtil.isEmpty(sb));
     }
 
@@ -275,7 +276,7 @@ class StringUtilsTest {
     @Test
     void testN2E1(){
         String str = null;
-        assertEquals(YuiFrame.StringUtil.EMPTY, YuiFrame.StringUtil.nullToEmpty(str));
+        assertEquals(strConst.EMPTY, YuiFrame.StringUtil.nullToEmpty(str));
     }
     @Test
     void testN2E2(){

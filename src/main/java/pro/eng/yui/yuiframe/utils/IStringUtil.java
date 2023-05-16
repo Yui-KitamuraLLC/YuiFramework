@@ -10,11 +10,6 @@ import pro.eng.yui.yuiframe.utils.impl.StringUtils;
  */
 public interface IStringUtil {
 
-    /** Empty string <code>""</code> */
-    String EMPTY = "";
-    /** one Space string <code>" "</code> */
-    String SPACE = " ";
-
     /** test the two strings are equal. <code>null</code>-safe
      * @see String#equalsIgnoreCase(String)  */
     boolean eq(final String first, final String second);

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static pro.eng.yui.yuiframe.YuiFrame.strConst;
 
 class ObjectUtilsTest {
 
@@ -19,7 +20,7 @@ class ObjectUtilsTest {
     }
     @Test
     void testIsNull2(){
-        assertFalse(YuiFrame.ObjectUtil.isNull(IStringUtil.EMPTY));
+        assertFalse(YuiFrame.ObjectUtil.isNull(strConst.EMPTY));
     }
     @Test
     void testIsNull3(){

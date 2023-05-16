@@ -6,7 +6,7 @@
 
     <groupId>pro.eng.yui</groupId>
     <artifactId>YuiFramework</artifactId>
-    <version>1.0.0-SNAPSHOT-005</version>
+    <version>1.0.0-SNAPSHOT-006</version>
     <name>Yui-Framework</name>
     <description>Java Utilities Package</description>
     <url>https://github.com/Yui-KitamuraLLC/YuiFramework</url>
