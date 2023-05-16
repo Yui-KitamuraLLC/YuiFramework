@@ -5,7 +5,7 @@
  *     // methods usage
  *     YuiFrame.StringUtil.eq(str1, str2);
  *     // const usage
- *     YuiFrame.StringUtil.EMPTY;
+ *     YuiFrame.StrConst.EMPTY;
  * </pre>
  * @author yui-KITAMURA
  * @since 1.0.0
