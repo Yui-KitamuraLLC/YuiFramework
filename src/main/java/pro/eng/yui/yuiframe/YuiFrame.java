@@ -25,6 +25,8 @@ public final class YuiFrame {
     public final static IObjectUtil ObjectUtil = ObjectUtils.getInstance();
     /** Utilities of Date */
     public final static IDateUtil DateUtil = DateUtils.getInstance();
+    /** Utilities of Environment or Properties */
+    public final static IEnvPropUtil EnvPropUtil = EnvPropUtils.getInstance();
 
     /** do not be instanced. Use static fields */
     private YuiFrame(){
