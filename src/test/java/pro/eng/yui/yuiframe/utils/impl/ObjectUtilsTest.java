@@ -26,6 +26,20 @@ class ObjectUtilsTest {
         assertFalse(YuiFrame.ObjectUtil.isNull(IObjectUtil.class));
     }
 
+    /* ** isNotNull ** */
+    @Test
+    void testIsNotNull1() {
+        assertFalse(YuiFrame.ObjectUtil.isNotNull(null));
+    }
+    @Test
+    void testIsNotNull2(){
+        assertTrue(YuiFrame.ObjectUtil.isNotNull(StrConst.EMPTY));
+    }
+    @Test
+    void testIsNotNull3(){
+        assertTrue(YuiFrame.ObjectUtil.isNotNull(IObjectUtil.class));
+    }
+
     /* ** equals ** */
     @Test
     void testEquals1(){
