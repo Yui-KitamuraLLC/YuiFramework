@@ -16,6 +16,13 @@ public interface IObjectUtil {
     boolean isNull(final Object obj);
 
     /**
+     * Check the object is NOT <code>null</code>
+     * @param obj check target instance or null value
+     * @return if the object is NOT <code>null</code> then <code>true</code>
+     */
+    boolean isNotNull(final Object obj);
+
+    /**
      * null-safe equality test.
      * Almost same as <code>first.equals(second)</code>, but safe to null.
      * <ul>

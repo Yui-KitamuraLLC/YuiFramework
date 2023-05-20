@@ -33,6 +33,11 @@ public class ObjectUtils implements IObjectUtil {
     }
 
     @Override
+    public boolean isNotNull(Object obj) {
+        return obj != null;
+    }
+
+    @Override
     public boolean equals(final Object first, final Object second) {
         if(first == null && second == null){
             return true;

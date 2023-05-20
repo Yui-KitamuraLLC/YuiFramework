@@ -3,13 +3,12 @@ package pro.eng.yui.yuiframe.utils.impl;
 import org.junit.jupiter.api.Test;
 import pro.eng.yui.yuiframe.YuiFrame;
 import pro.eng.yui.yuiframe.utils.IObjectUtil;
-import pro.eng.yui.yuiframe.utils.IStringUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static pro.eng.yui.yuiframe.YuiFrame.strConst;
+import static pro.eng.yui.yuiframe.YuiFrame.StrConst;
 
 class ObjectUtilsTest {
 
@@ -20,11 +19,25 @@ class ObjectUtilsTest {
     }
     @Test
     void testIsNull2(){
-        assertFalse(YuiFrame.ObjectUtil.isNull(strConst.EMPTY));
+        assertFalse(YuiFrame.ObjectUtil.isNull(StrConst.EMPTY));
     }
     @Test
     void testIsNull3(){
         assertFalse(YuiFrame.ObjectUtil.isNull(IObjectUtil.class));
+    }
+
+    /* ** isNotNull ** */
+    @Test
+    void testIsNotNull1() {
+        assertFalse(YuiFrame.ObjectUtil.isNotNull(null));
+    }
+    @Test
+    void testIsNotNull2(){
+        assertTrue(YuiFrame.ObjectUtil.isNotNull(StrConst.EMPTY));
+    }
+    @Test
+    void testIsNotNull3(){
+        assertTrue(YuiFrame.ObjectUtil.isNotNull(IObjectUtil.class));
     }
 
     /* ** equals ** */

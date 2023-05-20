@@ -1,14 +1,8 @@
 package pro.eng.yui.yuiframe;
 
 import pro.eng.yui.yuiframe.consts.StringConst;
-import pro.eng.yui.yuiframe.utils.ICollectionUtil;
-import pro.eng.yui.yuiframe.utils.IDateUtil;
-import pro.eng.yui.yuiframe.utils.IObjectUtil;
-import pro.eng.yui.yuiframe.utils.IStringUtil;
-import pro.eng.yui.yuiframe.utils.impl.CollectionUtils;
-import pro.eng.yui.yuiframe.utils.impl.DateUtils;
-import pro.eng.yui.yuiframe.utils.impl.ObjectUtils;
-import pro.eng.yui.yuiframe.utils.impl.StringUtils;
+import pro.eng.yui.yuiframe.utils.*;
+import pro.eng.yui.yuiframe.utils.impl.*;
 
 /**
  * フレームワークのメインクラス
@@ -20,7 +14,7 @@ public final class YuiFrame {
 
     /* Const */
     /** Constant values with String */
-    public final static StringConst strConst = StringConst.getInstance();
+    public final static StringConst StrConst = StringConst.getInstance();
 
     /* Util */
     /** Utilities of Collection */
@@ -31,6 +25,8 @@ public final class YuiFrame {
     public final static IObjectUtil ObjectUtil = ObjectUtils.getInstance();
     /** Utilities of Date */
     public final static IDateUtil DateUtil = DateUtils.getInstance();
+    /** Utilities of Environment or Properties */
+    public final static IEnvPropUtil EnvPropUtil = EnvPropUtils.getInstance();
 
     /** do not be instanced. Use static fields */
     private YuiFrame(){
