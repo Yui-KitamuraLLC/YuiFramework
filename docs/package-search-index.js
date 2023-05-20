@@ -1,1 +1,1 @@
-packageSearchIndex = [{"m":"pro.eng.yui.YuiFramework","l":"pro.eng.yui.yuiframe"},{"m":"pro.eng.yui.YuiFramework","l":"pro.eng.yui.yuiframe.utils"},{"l":"すべてのパッケージ","u":"allpackages-index.html"}];updateSearchResults();
+packageSearchIndex = [{"m":"pro.eng.yui.YuiFramework","l":"pro.eng.yui.yuiframe"},{"m":"pro.eng.yui.YuiFramework","l":"pro.eng.yui.yuiframe.consts"},{"m":"pro.eng.yui.YuiFramework","l":"pro.eng.yui.yuiframe.utils"},{"l":"すべてのパッケージ","u":"allpackages-index.html"}];updateSearchResults();

@@ -20,19 +20,19 @@ So please use the **latest** if you don`t have any special issue.
 <dependency>
     <!-- https://mvnrepository.com/artifact/pro.eng.yui/YuiFramework -->
     <groupId>pro.eng.yui</groupId>
-    <artifactId>YuiFramework</artifactId>
-    <version>1.0.0-SNAPSHOT-006</version>
+    <artifactId>YuiFrame</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 ### module-info.java
 ```java
 module yourModuleName {
-   require pro.eng.yui.YuiFramework;
-   ...
+   requires pro.eng.yui.YuiFramework;
+    ...
 ```
 ### in-your-source.java
 ```java
-YuiFrame.StringUtils.eq(arg1, arg2);
+YuiFrame.StringUtil.eq(arg1, arg2);
 ```
 
 ## JavaDoc

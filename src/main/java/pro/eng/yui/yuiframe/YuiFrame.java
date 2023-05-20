@@ -1,6 +1,7 @@
 package pro.eng.yui.yuiframe;
 
-import pro.eng.yui.yuiframe.consts.StringConst;
+import pro.eng.yui.yuiframe.consts.IStrConst;
+import pro.eng.yui.yuiframe.consts.impl.StringConst;
 import pro.eng.yui.yuiframe.utils.*;
 import pro.eng.yui.yuiframe.utils.impl.*;
 
@@ -14,7 +15,7 @@ public final class YuiFrame {
 
     /* Const */
     /** Constant values with String */
-    public final static StringConst StrConst = StringConst.getInstance();
+    public final static IStrConst StrConst = StringConst.getInstance();
 
     /* Util */
     /** Utilities of Collection */

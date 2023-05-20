@@ -2,6 +2,7 @@
  * module of <q>YuiFramework</q>
  * Provides Utilities
  * <pre>
+ *     import pro.eng.yui.yuiframe.YuiFrame;
  *     // methods usage
  *     YuiFrame.StringUtil.eq(str1, str2);
  *     // const usage
