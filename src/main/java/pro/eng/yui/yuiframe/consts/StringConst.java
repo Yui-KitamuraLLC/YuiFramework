@@ -1,5 +1,9 @@
 package pro.eng.yui.yuiframe.consts;
 
+/**
+ * Const string value class.
+ * Use via {@link pro.eng.yui.yuiframe.YuiFrame#StrConst}
+ */
 public final class StringConst {
 
     private final static StringConst instance;
