@@ -114,7 +114,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <outputDirectory>${project.basedir}/docs</outputDirectory>
+                    <outputDirectory>${project.basedir}/docs/v${project.version}</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
