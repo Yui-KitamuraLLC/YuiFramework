@@ -36,5 +36,5 @@ YuiFrame.StringUtil.eq(arg1, arg2);
 ```
 
 ## JavaDoc
-You can see the JavaDocs in [our JavaDoc site](https://yui-kitamurallc.github.io/YuiFramework/)  
-[![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fyui-kitamurallc.github.io%2FYuiFramework)](https://yui-kitamurallc.github.io/YuiFramework)
+You can see the JavaDocs in [our JavaDoc site](https://yui-kitamurallc.github.io/YuiFramework/) [![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fyui-kitamurallc.github.io%2FYuiFramework)](https://yui-kitamurallc.github.io/YuiFramework)  
+[Mirror of the site](https://yui.eng.pro/docs/YuiFramework/) [![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fyui.eng.pro%2FdocsFYuiFramework)](https://yui.eng.pro/docs/YuiFramework)
