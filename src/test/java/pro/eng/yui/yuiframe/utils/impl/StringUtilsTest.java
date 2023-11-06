@@ -180,6 +180,10 @@ class StringUtilsTest {
         assertEquals("    ", YuiFrame.StringUtil.concat(null,null,null,null));
     }
     @Test
+    public void testStrConcat5(){
+        assertEquals(" ",  YuiFrame.StringUtil.concat((String)null));
+    }
+    @Test
     public void testStrConcatDelimit1(){
         List<String> data = new ArrayList<>();
         data.add("abc");
