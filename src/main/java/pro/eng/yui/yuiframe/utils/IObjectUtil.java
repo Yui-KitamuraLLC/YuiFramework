@@ -1,5 +1,7 @@
 package pro.eng.yui.yuiframe.utils;
 
+import org.jetbrains.annotations.Contract;
+
 /**
  * Define common Object operations
  * @since 1.0.0
@@ -13,6 +15,7 @@ public interface IObjectUtil {
      * @param obj check target instance or null value
      * @return if the object is <code>null</code> then <code>true</code>
      */
+    @Contract("null -> true; !null -> false")
     boolean isNull(final Object obj);
 
     /**
@@ -20,6 +23,7 @@ public interface IObjectUtil {
      * @param obj check target instance or null value
      * @return if the object is NOT <code>null</code> then <code>true</code>
      */
+    @Contract("null -> false; !null -> true")
     boolean isNotNull(final Object obj);
 
     /**
@@ -35,6 +39,7 @@ public interface IObjectUtil {
      * @param second second object
      * @return almost same to {@link Object#equals(Object)}. See the document body
      */
+    @Contract("null,null -> true; null,!null -> false; !null,null -> false; _,_ -> _")
     boolean equals(final Object first, final Object second);
 
     /**
@@ -44,5 +49,6 @@ public interface IObjectUtil {
      * @return if the instance are the child of superClz then <code>true</code>
      * @see java.lang.Class#isInstance(Object)
      */
+    @Contract("_,null -> fail; null,_ -> false; !null,!null -> _  ")
     boolean isTypeOf(final Object instance, final Class superClz);
 }
