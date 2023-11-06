@@ -85,6 +85,15 @@ public interface IDateUtil {
     String toStr(Date date, IDateUtil.Formats format);
 
     /**
+     * Convert {@link java.lang.String} to {@link java.util.Calendar} with format
+     * @param input convert target text
+     * @param format the text format
+     * @return the Calendar instance which has the time given with the input
+     * @throws IllegalArgumentException when failed to convert
+     */
+    Calendar fromStr(String input, IDateUtil.Formats format);
+
+    /**
      * Convert {@link java.util.Calendar} to {@link java.sql.Timestamp}
      * @param calendar original Calendar instance
      * @return the Timestamp instance that has same DateTime with argument
