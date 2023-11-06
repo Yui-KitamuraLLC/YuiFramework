@@ -1,5 +1,7 @@
 package pro.eng.yui.yuiframe.utils;
 
+import org.jetbrains.annotations.Contract;
+
 /**
  * Define common Environment and Properties operations
  * @since 1.0.0
@@ -14,6 +16,7 @@ public interface IEnvPropUtil {
      * @param key system environment variables key
      * @return if exists, then that value, else <code>""(Empty string)</code>
      */
+    @Contract("null -> fail; !null -> new")
     String getEnv(String key);
 
     /**
@@ -23,6 +26,7 @@ public interface IEnvPropUtil {
      * @param defaultValue default value when the variables not exists
      * @return if exists, then that value, else the <code>defaultValue</code>
      */
+    @Contract("null,_ -> fail; !null,_ -> _")
     String getEnv(String key, String defaultValue);
 
     /* Properties */
@@ -32,6 +36,7 @@ public interface IEnvPropUtil {
      * @param key properties key
      * @return if exists, then that value, else <code>""(Empty string)</code>
      */
+    @Contract("null -> fail; !null -> _")
     String getProp(String key);
 
     /**
@@ -41,6 +46,7 @@ public interface IEnvPropUtil {
      * @param defaultValue default value when the properties not exists
      * @return if exists, then that properties value, else the <code>defaultValue</code>
      */
+    @Contract("null,_ -> fail; !null,_ -> _")
     String getProp(String key, String defaultValue);
 
     /**
@@ -49,6 +55,7 @@ public interface IEnvPropUtil {
      * @param value set value
      * @throws IllegalStateException Already properties key-value set exists
      */
+    @Contract("null,_ -> fail; _,null -> fail; _,_ -> _")
     void setProp(String key, String value) throws IllegalStateException;
 
     /**
@@ -57,6 +64,7 @@ public interface IEnvPropUtil {
      * @param value set value
      * @return <code>true</code> when overwrite
      */
+    @Contract("null,_ -> fail; _,null -> fail; _,_ -> _")
     boolean setPropForce(String key, String value);
 
 

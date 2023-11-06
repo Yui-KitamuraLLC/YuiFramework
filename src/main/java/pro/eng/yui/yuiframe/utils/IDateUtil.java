@@ -1,5 +1,7 @@
 package pro.eng.yui.yuiframe.utils;
 
+import org.jetbrains.annotations.Contract;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -9,7 +11,7 @@ import java.util.Date;
  * Define common Date/Calendar operations
  * @since 1.0.0
  * @author yui-KITAMURA
- * @version 1.0.0
+ * @version 1.1.0
  */
 public interface IDateUtil {
 
@@ -50,6 +52,7 @@ public interface IDateUtil {
      * Get Calendar instance of current DateTime.
      * @return instance of current DateTime
      */
+    @Contract(" -> new")
     Calendar now();
 
     /**
@@ -58,6 +61,7 @@ public interface IDateUtil {
      * @param calendar original instance of Calendar
      * @return the Date instance that has same timestamp with parameter
      */
+    @Contract("null -> null; !null -> new")
     Date toDate(Calendar calendar);
 
     /**
@@ -66,6 +70,7 @@ public interface IDateUtil {
      * @param date original instance of Date
      * @return the Calendar instance that has same timestamp with parameter
      */
+    @Contract("null -> null; !null-> new")
     Calendar toCal(Date date);
 
     /**
@@ -74,6 +79,7 @@ public interface IDateUtil {
      * @param format the output format that you want to get
      * @return the string value which the argument of calendar formatted with selected format
      */
+    @Contract("null, null -> fail; null, _ -> null; !null, _ -> new")
     String toStr(Calendar calendar, IDateUtil.Formats format);
 
     /**
@@ -82,13 +88,26 @@ public interface IDateUtil {
      * @param format the output format that you want to get
      * @return the string value which the argument of date formatted with selected format
      */
+    @Contract("null, null -> fail; null, _ -> null; !null, _ -> new")
     String toStr(Date date, IDateUtil.Formats format);
+
+    /**
+     * Convert {@link java.lang.String} to {@link java.util.Calendar} with format
+     * @param input convert target text
+     * @param format the text format
+     * @return the Calendar instance which has the time given with the input
+     * @throws IllegalArgumentException when failed to convert
+     * @since 1.1.0
+     */
+    @Contract("null, null -> fail; null, _ -> null; !null, _ -> new")
+    Calendar fromStr(String input, IDateUtil.Formats format);
 
     /**
      * Convert {@link java.util.Calendar} to {@link java.sql.Timestamp}
      * @param calendar original Calendar instance
      * @return the Timestamp instance that has same DateTime with argument
      */
+    @Contract("null -> null; !null -> new")
     Timestamp toTS(Calendar calendar);
 
     /**
@@ -96,5 +115,6 @@ public interface IDateUtil {
      * @param date original Date instance
      * @return the Timestamp instance that has same DateTime with argument
      */
+    @Contract("null -> null; !null -> new")
     Timestamp toTS(Date date);
 }

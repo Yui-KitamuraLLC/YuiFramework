@@ -34,6 +34,9 @@ public class EnvPropUtils implements IEnvPropUtil {
     }
     @Override
     public String getEnv(String key, String defaultValue){
+        if(key == null){
+            throw new IllegalArgumentException("given environment key is Null");
+        }
         String val = System.getenv(key);
         return val == null ? defaultValue : val;
     }
@@ -45,6 +48,9 @@ public class EnvPropUtils implements IEnvPropUtil {
     }
     @Override
     public String getProp(String key, String defaultValue){
+        if(key == null){
+            throw new IllegalArgumentException("given properties key is Null");
+        }
         return System.getProperty(key, defaultValue);
     }
     @Override

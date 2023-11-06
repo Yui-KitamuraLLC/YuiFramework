@@ -122,5 +122,8 @@ class ObjectUtilsTest {
     void testIsTypeOf5(){
         assertTrue(YuiFrame.ObjectUtil.isTypeOf(new ArrayList<String>(), Collection.class));
     }
-
+    @Test
+    void testIsTypeOfExc(){
+        assertThrows(IllegalArgumentException.class, ()-> YuiFrame.ObjectUtil.isTypeOf("string", null));
+    }
 }
