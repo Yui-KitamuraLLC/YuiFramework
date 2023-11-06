@@ -12,7 +12,7 @@ import java.util.Date;
  * Implement of common operation for Dates/Calendar
  * @since 1.0.0
  * @author yui-KITAMURA
- * @version 1.0.0
+ * @version 1.1.0
  */
 public class DateUtils implements IDateUtil {
 
