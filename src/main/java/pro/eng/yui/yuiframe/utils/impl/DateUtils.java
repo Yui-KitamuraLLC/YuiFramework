@@ -4,6 +4,7 @@ import pro.eng.yui.yuiframe.YuiFrame;
 import pro.eng.yui.yuiframe.utils.IDateUtil;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  * Implement of common operation for Dates/Calendar
  * @since 1.0.0
  * @author yui-KITAMURA
- * @version 1.0.0
+ * @version 1.1.0
  */
 public class DateUtils implements IDateUtil {
 
@@ -65,6 +66,18 @@ public class DateUtils implements IDateUtil {
             return null;
         }
         return format.getSDF().format(date);
+    }
+
+    @Override
+    public Calendar fromStr(String input, IDateUtil.Formats format){
+        if(YuiFrame.ObjectUtil.isNull(input)){
+            return null;
+        }
+        try {
+            return toCal(format.getSDF().parse(input));
+        }catch(ParseException e){
+            throw new IllegalArgumentException(e);
+        }
     }
 
     @Override

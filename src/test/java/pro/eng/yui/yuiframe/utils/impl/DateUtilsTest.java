@@ -138,6 +138,65 @@ class DateUtilsTest {
         assertNull(YuiFrame.DateUtil.toStr((Calendar) null, IDateUtil.Formats.HHMMSS_cr_sss));
     }
 
+    /* ** fromStr ** */
+    @Test
+    public void testFromStr1(){
+        Calendar expected = new Calendar.Builder().setDate(2020, Calendar.FEBRUARY, 29).build();
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("20200229", IDateUtil.Formats.YYYYMMDD));
+    }
+    @Test
+    public void testFromStr2(){
+        Calendar expected = new Calendar.Builder().setDate(2020, Calendar.FEBRUARY, 29).build();
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("2020/02/29", IDateUtil.Formats.YYYYMMDD_slash));
+    }
+    @Test
+    public void testFromStr3(){
+        Calendar expected = new Calendar.Builder().setDate(2020, Calendar.FEBRUARY, 29).build();
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("2020-02-29", IDateUtil.Formats.YYYYMMDD_hyphen));
+    }
+    @Test
+    public void testFromStr4(){
+        Calendar expected = new Calendar.Builder()
+                .setDate(2020, Calendar.FEBRUARY, 29).setTimeOfDay(12,34,56)
+                .build();
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("20200229123456", IDateUtil.Formats.YMDHMS));
+    }
+    @Test
+    public void testFromStr5(){
+        Calendar expected = new Calendar.Builder()
+                .setDate(2020, Calendar.FEBRUARY, 29).setTimeOfDay(12,34,56)
+                .build();
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("2020/02/29 12:34:56", IDateUtil.Formats.YMDHMS_slSpCr));
+    }
+    @Test
+    public void testFromStr6(){
+        Calendar expected = new Calendar.Builder().setTimeOfDay(12,34,56, 987).build();
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("123456987", IDateUtil.Formats.HHMMSSsss));
+    }
+    @Test
+    public void testFromStr7(){
+        Calendar expected = new Calendar.Builder().setTimeOfDay(12,34,56).build();
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("12:34:56", IDateUtil.Formats.HHMMSS_coron));
+    }
+    @Test
+    public void testFromStr8(){
+        Calendar expected =  new Calendar.Builder().setTimeOfDay(12,34,56).build();;
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("123456", IDateUtil.Formats.HHMMSS));
+    }
+    @Test
+    public void testFromStr9(){
+        Calendar expected =  new Calendar.Builder().setTimeOfDay(12,34,56, 987).build();;
+        assertEquals(expected, YuiFrame.DateUtil.fromStr("12:34:56.987", IDateUtil.Formats.HHMMSS_cr_sss));
+    }
+    @Test
+    public void testFromStr10(){
+        assertNull(YuiFrame.DateUtil.fromStr((String)null, IDateUtil.Formats.HHMMSS_cr_sss));
+    }
+    @Test
+    public void testFromStrExc(){
+        assertThrows(IllegalArgumentException.class, ()-> YuiFrame.DateUtil.fromStr("1", IDateUtil.Formats.YYYYMMDD));
+    }
+
     /* ** toTS ** */
     @Test
     public void testTpTs1(){

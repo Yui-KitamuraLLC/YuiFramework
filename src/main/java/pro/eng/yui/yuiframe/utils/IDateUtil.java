@@ -9,7 +9,7 @@ import java.util.Date;
  * Define common Date/Calendar operations
  * @since 1.0.0
  * @author yui-KITAMURA
- * @version 1.0.0
+ * @version 1.1.0
  */
 public interface IDateUtil {
 
@@ -83,6 +83,16 @@ public interface IDateUtil {
      * @return the string value which the argument of date formatted with selected format
      */
     String toStr(Date date, IDateUtil.Formats format);
+
+    /**
+     * Convert {@link java.lang.String} to {@link java.util.Calendar} with format
+     * @param input convert target text
+     * @param format the text format
+     * @return the Calendar instance which has the time given with the input
+     * @throws IllegalArgumentException when failed to convert
+     * @since 1.1.0
+     */
+    Calendar fromStr(String input, IDateUtil.Formats format);
 
     /**
      * Convert {@link java.util.Calendar} to {@link java.sql.Timestamp}
