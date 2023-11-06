@@ -3,6 +3,7 @@ package pro.eng.yui.yuiframe.utils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import org.jetbrains.annotations.Contract;
 
 /**
  * Define common Collection operations
@@ -19,6 +20,7 @@ public interface ICollectionUtil {
      * @return an {@link java.util.List} that contains all arguments
      * @see java.util.Arrays#asList(Object[])
      */
+    @Contract("_ -> new")
     <T> List<T> toList(final T... aryObj);
 
     /**
@@ -28,6 +30,7 @@ public interface ICollectionUtil {
      * @return an {@link java.util.List} that contains all arguments
      * @see java.util.List#of(Object[])
      */
+    @Contract("_ -> new")
     <T> ArrayList<T> toArrayList(final T... aryObj);
 
     /**
@@ -35,12 +38,14 @@ public interface ICollectionUtil {
      * @param array target
      * @return array is null or nothing in collection then <code>true</code>
      */
+    @Contract("null -> true; !null -> _;")
     boolean isEmpty(final Object[] array);
     /**
      * judge Collection is empty
      * @param list target instance
      * @return Collection is null or nothing in it then <code>true</code>
      */
+    @Contract("null -> true; !null -> _;")
     boolean isEmpty(final Collection<?> list);
 
     /**
@@ -56,11 +61,13 @@ public interface ICollectionUtil {
      * @param collection a collection instance that format to string
      * @return single line string value
      */
+    @Contract("null -> !null; _ -> new")
     String toString(final Collection<?> collection);
     /**
      * Array version of {@link #toString(Collection)}
      * @see #toString(Collection)
      */
+    @Contract("null -> !null; _ -> new")
     String toString(final Object[] array);
 
     /**
@@ -71,11 +78,13 @@ public interface ICollectionUtil {
      * @param collection a collection instance that format to string
      * @return single line string value
      */
+    @Contract("null -> !null; _ -> new")
     String toStrMeta(final Collection<?> collection);
     /**
      * Array version of {@link #toStrMeta(Collection)} 
      * @see #toStrMeta(Collection)
      */
+    @Contract("null -> !null; _ -> new")
     String toStrMeta(final Object[] array);
 
     /**
@@ -98,11 +107,13 @@ public interface ICollectionUtil {
      * @param collection a collection instance that format to string
      * @return multiple line string value
      */
+    @Contract("null -> !null; _ -> new")
     String toStringBr(final Collection<?> collection);
     /**
      * Array version of {@link #toStringBr(Collection)}
      * @see #toStringBr(Collection)
      */
+    @Contract("null -> !null; _ -> new")
     String toStringBr(final Object[] array);
 
     /**
@@ -118,11 +129,13 @@ public interface ICollectionUtil {
      * @param collection a collection instance that format to string
      * @return multiple line string value
      */
+    @Contract("null -> !null; _ -> new")
     String toStrMetaBr(final Collection<?> collection);
     /**
      * Array version of {@link #toStrMetaBr(Collection)}
      * @see #toStrMetaBr(Collection)
      */
+    @Contract("null -> !null; _ -> new")
     String toStrMetaBr(final Object[] array);
 
 }

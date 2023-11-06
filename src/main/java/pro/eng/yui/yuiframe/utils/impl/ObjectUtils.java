@@ -51,6 +51,9 @@ public class ObjectUtils implements IObjectUtil {
 
     @Override
     public boolean isTypeOf(final Object instance, final Class superClz) {
+        if(superClz == null){
+            throw new IllegalArgumentException("class type is null");
+        }
         return superClz.isInstance(instance);
     }
 }

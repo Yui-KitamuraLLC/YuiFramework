@@ -26,6 +26,10 @@ class EnvPropUtilsTest {
     }
 
     @Test
+    void getEnv0() {
+        assertThrows(IllegalArgumentException.class, ()-> YuiFrame.EnvPropUtil.getEnv(null));
+    }
+    @Test
     void getEnv1() {
         String javaHome = System.getenv("JAVA_HOME");
         assertEquals(javaHome, YuiFrame.EnvPropUtil.getEnv("JAVA_HOME"));
@@ -59,6 +63,10 @@ class EnvPropUtilsTest {
         );
     }
 
+    @Test
+    void getProp0(){
+        assertThrows(IllegalArgumentException.class, ()-> YuiFrame.EnvPropUtil.getProp(null));
+    }
     @Test
     void getProp1() {
         String propValue = System.getProperty("key1");

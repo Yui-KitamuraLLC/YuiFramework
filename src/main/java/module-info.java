@@ -16,6 +16,7 @@ module pro.eng.yui.YuiFramework {
     //requires
     requires java.base;
     requires java.sql;
+    requires org.jetbrains.annotations;
 
     // exports
     exports pro.eng.yui.yuiframe;
