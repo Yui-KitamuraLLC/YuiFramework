@@ -124,22 +124,22 @@ public class StringUtils implements IStringUtil {
      * @return one string value that joins all arguments each separated by delimiter
      */
     private String join(final CharSequence delimiter, final Iterable<? extends CharSequence> arg){
-        String delimitStr = (delimiter == null) ? StrConst.SPACE : delimiter.toString();
-        StringBuilder sb = new StringBuilder();
+        final String delimitStr = (delimiter == null) ? StrConst.SPACE : delimiter.toString();
+        StringBuilder resultBuilder = new StringBuilder();
 
         Iterator<? extends CharSequence> itr = arg.iterator();
         while(itr.hasNext()){
-            CharSequence cs = itr.next();
-            if(cs == null){
-                sb.append(StrConst.SPACE);
+            CharSequence currentArg = itr.next();
+            if(currentArg == null){
+                resultBuilder.append(StrConst.SPACE);
             }else{
-                sb.append(cs);
+                resultBuilder.append(currentArg);
             }
             if(itr.hasNext()){
-                sb.append(delimitStr);
+                resultBuilder.append(delimitStr);
             }
         }
-        return sb.toString();
+        return resultBuilder.toString();
     }
     /** @see StringUtils#join(CharSequence, Iterable) */
     private String join(final CharSequence delimiter, final CharSequence... arg){
