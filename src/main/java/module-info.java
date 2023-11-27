@@ -1,6 +1,16 @@
 /**
- * module of <q>YuiFramework</q>
- * Provides Utilities
+ * The pro.eng.yui.YuiFramework module.
+ * It exports several packages for working with
+ * user interface components, constants, and utility classes.
+ *
+ * The module exports the following packages:
+ * <ul>
+ *     <li>pro.eng.yui.yuiframe</li>
+ *     <li>pro.eng.yui.yuiframe.consts</li>
+ *     <li>pro.eng.yui.yuiframe.utils</li>
+ * </ul>
+ *
+ * usage:
  * <pre>
  *     import pro.eng.yui.yuiframe.YuiFrame;
  *     // methods usage
