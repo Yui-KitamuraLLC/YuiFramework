@@ -110,7 +110,7 @@ public class CollectionUtils implements ICollectionUtil {
         if(meta){
             sb.append("{");
             if(br){ sb.append(System.lineSeparator()); }
-            sb.append("size:").append(YuiFrame.ObjectUtil.isNull(collection)? "0":collection.size()).append(",");
+            sb.append("size:").append(collection.size()).append(",");
             if(br){ sb.append(System.lineSeparator()); }
             sb.append("data:");
         }
