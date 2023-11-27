@@ -3,20 +3,22 @@
  * It exports several packages for working with
  * user interface components, constants, and utility classes.
  *
- * The module exports the following packages:
+ * <p>
+ * The module exports the following packages:</p>
  * <ul>
  *     <li>pro.eng.yui.yuiframe</li>
  *     <li>pro.eng.yui.yuiframe.consts</li>
  *     <li>pro.eng.yui.yuiframe.utils</li>
  * </ul>
  *
- * usage:
+ * <p>
+ * usage:</p>
  * <pre>
- *     import pro.eng.yui.yuiframe.YuiFrame;
- *     // methods usage
- *     YuiFrame.StringUtil.eq(str1, str2);
- *     // const usage
- *     YuiFrame.StrConst.EMPTY;
+ * import pro.eng.yui.yuiframe.YuiFrame;
+ * // methods usage
+ * YuiFrame.StringUtil.eq(str1, str2);
+ * // const usage
+ * YuiFrame.StrConst.EMPTY;
  * </pre>
  * @author yui-KITAMURA
  * @since 1.0.0
