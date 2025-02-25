@@ -21,7 +21,7 @@ So please use the **latest** if you don`t have any special issue.
     <!-- https://mvnrepository.com/artifact/pro.eng.yui/YuiFramework -->
     <groupId>pro.eng.yui</groupId>
     <artifactId>YuiFrame</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.2</version>
 </dependency>
 ```
 ### module-info.java
